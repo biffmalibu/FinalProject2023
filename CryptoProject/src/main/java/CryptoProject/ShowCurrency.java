@@ -4,6 +4,8 @@
  */
 package CryptoProject;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author bradf
@@ -43,6 +45,34 @@ public class ShowCurrency extends javax.swing.JFrame {
         jpyImage = new javax.swing.JLabel();
         jpyLabel = new javax.swing.JLabel();
         jpyPrice = new javax.swing.JLabel();
+        gbpPanel = new javax.swing.JPanel();
+        gbpImage = new javax.swing.JLabel();
+        gbpLabel = new javax.swing.JLabel();
+        gbpPrice = new javax.swing.JLabel();
+        audPanel = new javax.swing.JPanel();
+        audImage = new javax.swing.JLabel();
+        audLabel = new javax.swing.JLabel();
+        audPrice = new javax.swing.JLabel();
+        cadPanel = new javax.swing.JPanel();
+        cadImage = new javax.swing.JLabel();
+        cadLabel = new javax.swing.JLabel();
+        cadPrice = new javax.swing.JLabel();
+        chfPanel = new javax.swing.JPanel();
+        chfImage = new javax.swing.JLabel();
+        chfLabel = new javax.swing.JLabel();
+        chfPrice = new javax.swing.JLabel();
+        cnyPanel = new javax.swing.JPanel();
+        cnyImage = new javax.swing.JLabel();
+        cnyLabel = new javax.swing.JLabel();
+        cnyPrice = new javax.swing.JLabel();
+        nokPanel = new javax.swing.JPanel();
+        nokImage = new javax.swing.JLabel();
+        nokLabel = new javax.swing.JLabel();
+        nokPrice = new javax.swing.JLabel();
+        mxnPanel = new javax.swing.JPanel();
+        mxnImage = new javax.swing.JLabel();
+        mxnLabel = new javax.swing.JLabel();
+        mxnPrice = new javax.swing.JLabel();
         selectedCurrency = new javax.swing.JComboBox<>();
         updateButton = new javax.swing.JButton();
 
@@ -159,6 +189,244 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        gbpPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        gbpLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        gbpLabel.setText("GBP - Great British Pound");
+
+        gbpPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        gbpPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        gbpPrice.setText("Loading...");
+
+        javax.swing.GroupLayout gbpPanelLayout = new javax.swing.GroupLayout(gbpPanel);
+        gbpPanel.setLayout(gbpPanelLayout);
+        gbpPanelLayout.setHorizontalGroup(
+            gbpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gbpPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(gbpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gbpLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gbpPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        gbpPanelLayout.setVerticalGroup(
+            gbpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(gbpPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(gbpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(gbpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(gbpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(gbpPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(gbpImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        audPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        audLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        audLabel.setText("AUD - Austrailian Dollar");
+
+        audPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        audPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        audPrice.setText("Loading...");
+
+        javax.swing.GroupLayout audPanelLayout = new javax.swing.GroupLayout(audPanel);
+        audPanel.setLayout(audPanelLayout);
+        audPanelLayout.setHorizontalGroup(
+            audPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(audPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(audImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(audLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(audPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        audPanelLayout.setVerticalGroup(
+            audPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(audPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(audPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(audPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(audLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(audPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(audImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        cadPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        cadLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cadLabel.setText("CAD - Canadian Dollars");
+
+        cadPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cadPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cadPrice.setText("Loading...");
+
+        javax.swing.GroupLayout cadPanelLayout = new javax.swing.GroupLayout(cadPanel);
+        cadPanel.setLayout(cadPanelLayout);
+        cadPanelLayout.setHorizontalGroup(
+            cadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cadPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cadImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cadLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cadPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        cadPanelLayout.setVerticalGroup(
+            cadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cadPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cadLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(cadPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(cadImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        chfPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        chfLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        chfLabel.setText("CHF - Swiss Francs");
+
+        chfPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        chfPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        chfPrice.setText("Loading...");
+
+        javax.swing.GroupLayout chfPanelLayout = new javax.swing.GroupLayout(chfPanel);
+        chfPanel.setLayout(chfPanelLayout);
+        chfPanelLayout.setHorizontalGroup(
+            chfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chfPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chfImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chfLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        chfPanelLayout.setVerticalGroup(
+            chfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chfPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(chfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(chfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(chfLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(chfPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(chfImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        cnyPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        cnyLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cnyLabel.setText("CNY - Chinese Yuan");
+
+        cnyPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        cnyPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cnyPrice.setText("Loading...");
+
+        javax.swing.GroupLayout cnyPanelLayout = new javax.swing.GroupLayout(cnyPanel);
+        cnyPanel.setLayout(cnyPanelLayout);
+        cnyPanelLayout.setHorizontalGroup(
+            cnyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cnyPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cnyImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cnyLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cnyPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        cnyPanelLayout.setVerticalGroup(
+            cnyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cnyPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(cnyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(cnyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cnyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(cnyPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(cnyImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        nokPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        nokLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        nokLabel.setText("NOK - Norwegian Krone");
+
+        nokPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        nokPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        nokPrice.setText("Loading...");
+
+        javax.swing.GroupLayout nokPanelLayout = new javax.swing.GroupLayout(nokPanel);
+        nokPanel.setLayout(nokPanelLayout);
+        nokPanelLayout.setHorizontalGroup(
+            nokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nokPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(nokImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nokLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nokPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        nokPanelLayout.setVerticalGroup(
+            nokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(nokPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(nokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(nokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(nokLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(nokPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(nokImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        mxnPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        mxnLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        mxnLabel.setText("MXN - Mexican Peso");
+
+        mxnPrice.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        mxnPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mxnPrice.setText("Loading...");
+
+        javax.swing.GroupLayout mxnPanelLayout = new javax.swing.GroupLayout(mxnPanel);
+        mxnPanel.setLayout(mxnPanelLayout);
+        mxnPanelLayout.setHorizontalGroup(
+            mxnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mxnPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mxnImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mxnLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mxnPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(81, 81, 81))
+        );
+        mxnPanelLayout.setVerticalGroup(
+            mxnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mxnPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(mxnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(mxnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(mxnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(mxnPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                    .addComponent(mxnImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout valuesPanelLayout = new javax.swing.GroupLayout(valuesPanel);
         valuesPanel.setLayout(valuesPanelLayout);
         valuesPanelLayout.setHorizontalGroup(
@@ -168,7 +436,14 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(valuesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(usdPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(eurPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jpyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jpyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gbpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(audPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cadPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(chfPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cnyPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(nokPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(mxnPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         valuesPanelLayout.setVerticalGroup(
@@ -180,7 +455,21 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addComponent(eurPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(289, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gbpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(audPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cadPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chfPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cnyPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nokPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(mxnPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         valuesScrollPane.setViewportView(valuesPanel);
@@ -219,9 +508,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(selectedCurrency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateButton))
-                .addGap(0, 0, 0)
-                .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
@@ -232,9 +521,17 @@ public class ShowCurrency extends javax.swing.JFrame {
     }//GEN-LAST:event_selectedCurrencyActionPerformed
 
     private void updateCoinData(String base) {
-        usdPrice.setText(String.valueOf(data.getConversionRate(base, "USD")));
-        eurPrice.setText(String.valueOf(data.getConversionRate(base, "EUR")));
-        jpyPrice.setText(String.valueOf(data.getConversionRate(base, "JPY")));
+        String[] currencies = { // Array of strings for the currency names
+            "USD", "EUR", "JPY", "GBP", "AUD",
+            "CAD", "CHF", "CNY", "NOK", "MXN",
+        };
+        //usdPrice.setText(String.valueOf(data.getConversionRate(base, "USD")));
+        //eurPrice.setText(String.valueOf(data.getConversionRate(base, "EUR")));
+        //jpyPrice.setText(String.valueOf(data.getConversionRate(base, "JPY")));
+        JLabel[] prices = {usdPrice, eurPrice, jpyPrice, gbpPrice, audPrice, cadPrice, chfPrice, cnyPrice, nokPrice, mxnPrice};
+        for (int i = 0; i < prices.length; i++) {
+            prices[i].setText(String.valueOf(data.getConversionRate(base, currencies[i])));
+        }
     }
     /**
      * @param args the command line arguments
@@ -273,14 +570,42 @@ public class ShowCurrency extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
+    private javax.swing.JLabel audImage;
+    private javax.swing.JLabel audLabel;
+    private javax.swing.JPanel audPanel;
+    private javax.swing.JLabel audPrice;
+    private javax.swing.JLabel cadImage;
+    private javax.swing.JLabel cadLabel;
+    private javax.swing.JPanel cadPanel;
+    private javax.swing.JLabel cadPrice;
+    private javax.swing.JLabel chfImage;
+    private javax.swing.JLabel chfLabel;
+    private javax.swing.JPanel chfPanel;
+    private javax.swing.JLabel chfPrice;
+    private javax.swing.JLabel cnyImage;
+    private javax.swing.JLabel cnyLabel;
+    private javax.swing.JPanel cnyPanel;
+    private javax.swing.JLabel cnyPrice;
     private javax.swing.JLabel eurImage;
     private javax.swing.JLabel eurLabel;
     private javax.swing.JPanel eurPanel;
     private javax.swing.JLabel eurPrice;
+    private javax.swing.JLabel gbpImage;
+    private javax.swing.JLabel gbpLabel;
+    private javax.swing.JPanel gbpPanel;
+    private javax.swing.JLabel gbpPrice;
     private javax.swing.JLabel jpyImage;
     private javax.swing.JLabel jpyLabel;
     private javax.swing.JPanel jpyPanel;
     private javax.swing.JLabel jpyPrice;
+    private javax.swing.JLabel mxnImage;
+    private javax.swing.JLabel mxnLabel;
+    private javax.swing.JPanel mxnPanel;
+    private javax.swing.JLabel mxnPrice;
+    private javax.swing.JLabel nokImage;
+    private javax.swing.JLabel nokLabel;
+    private javax.swing.JPanel nokPanel;
+    private javax.swing.JLabel nokPrice;
     private javax.swing.JComboBox<String> selectedCurrency;
     private javax.swing.JButton updateButton;
     private javax.swing.JLabel usdImage;
