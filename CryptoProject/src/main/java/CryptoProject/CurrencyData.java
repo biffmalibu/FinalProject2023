@@ -101,6 +101,13 @@ public class CurrencyData {
             return 0.0; // You can return a default value or handle the error as needed.
         }
     }
+    /** 
+     * Gets the historic exchange rate between two currencies
+     * 
+     * @param fromCurrency The current to convert from
+     * @param toCurrency The current to convert to
+     * @return The conversion rate as a double
+     */
     public double getHistoricRate(String fromCurrency, String toCurrency) {
         if (historicPrices.containsKey(fromCurrency) && historicPrices.get(fromCurrency).containsKey(toCurrency)) // Check if the fromCurrency and toCurrency exist in the historicPrices map.
             return historicPrices.get(fromCurrency).get(toCurrency);
