@@ -551,8 +551,8 @@ public class ShowCurrency extends javax.swing.JFrame {
             "CAD", "CHF", "CNY", "NOK", "MXN",
         };
         JLabel[] prices = {usdPrice, eurPrice, jpyPrice, gbpPrice, audPrice, cadPrice, chfPrice, cnyPrice, nokPrice, mxnPrice};
-        DecimalFormat decimalFormat = new DecimalFormat("#,###.0000"); // Format the value with two decimal places and commas
-        decimalFormat.setMinimumFractionDigits(2); 
+        DecimalFormat decimalFormat = new DecimalFormat("0.0###"); // Format the value with two decimal places and commas
+        decimalFormat.setGroupingUsed(true); // Enable comma grouping
         for (int i = 0; i < prices.length; i++) {
             prices[i].setText(String.valueOf(decimalFormat.format(data.getConversionRate(base, currencies[i]))));
         }
