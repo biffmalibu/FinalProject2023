@@ -193,6 +193,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         });
 
         updateButton.setText("Update");
+        updateButton.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
