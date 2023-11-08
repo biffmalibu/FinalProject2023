@@ -19,7 +19,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     public ShowCurrency() {
         initComponents();
         data = new CurrencyData();
-        updateCoinData(selectedCurrency.getSelectedItem().toString());
+        updateCurrencyData(selectedCurrency.getSelectedItem().toString());
     }
 
     /**
@@ -536,7 +536,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void selectedCurrencyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedCurrencyActionPerformed
-        updateCoinData(selectedCurrency.getSelectedItem().toString());  // Update the values
+        updateCurrencyData(selectedCurrency.getSelectedItem().toString());  // Update the values
     }//GEN-LAST:event_selectedCurrencyActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
@@ -545,7 +545,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
-    private void updateCoinData(String base) {
+    private void updateCurrencyData(String base) {
         String symbol = getCurrencySymbol(base);
         String[] currencies = { // Array of strings for the currency names
             "USD", "EUR", "JPY", "GBP", "AUD",
@@ -555,7 +555,9 @@ public class ShowCurrency extends javax.swing.JFrame {
         DecimalFormat decimalFormat = new DecimalFormat("0.0###"); // Format the value with two decimal places and commas
         decimalFormat.setGroupingUsed(true); // Enable comma grouping
         for (int i = 0; i < prices.length; i++) {
-            prices[i].setText(symbol + String.valueOf(decimalFormat.format(data.getConversionRate(base, currencies[i]))));
+            String currentRate = String.valueOf(decimalFormat.format(data.getConversionRate(base, currencies[i])));
+            prices[i].setText(symbol + currentRate);
+            //
         }
     }
     /**
