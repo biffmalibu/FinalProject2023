@@ -546,6 +546,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void updateCoinData(String base) {
+        String symbol = getCurrencySymbol(base);
         String[] currencies = { // Array of strings for the currency names
             "USD", "EUR", "JPY", "GBP", "AUD",
             "CAD", "CHF", "CNY", "NOK", "MXN",
@@ -554,9 +555,36 @@ public class ShowCurrency extends javax.swing.JFrame {
         DecimalFormat decimalFormat = new DecimalFormat("0.0###"); // Format the value with two decimal places and commas
         decimalFormat.setGroupingUsed(true); // Enable comma grouping
         for (int i = 0; i < prices.length; i++) {
-            prices[i].setText(String.valueOf(decimalFormat.format(data.getConversionRate(base, currencies[i]))));
+            prices[i].setText(symbol + String.valueOf(decimalFormat.format(data.getConversionRate(base, currencies[i]))));
         }
     }
+    /**
+     * Helper method to find the correct currency symbol to print.
+     * 
+     * @param currency The current selected currency
+     * @return The corresponding currency symbol
+     */
+    private String getCurrencySymbol(String currency) {
+        String symbol;
+        currency = currency.toLowerCase();  // Set the currency to lowercase
+        if (null == currency) {
+            symbol = "";                    // Default to empty string for unknown currencies
+        } else symbol = switch (currency) { // Look for the correct symbol
+            case "usd" -> "$";
+            case "eur" -> "€";
+            case "jpy" -> "¥";
+            case "gbp" -> "£";
+            case "aud" -> "A$";
+            case "cad" -> "C$";
+            case "chf" -> "Fr";
+            case "cny" -> "¥";
+            case "mxn" -> "$";
+            case "nok" -> "kr";
+            default -> "";
+        }; 
+        return symbol;                      // Return the symbol
+    }
+    
     /**
      * @param args the command line arguments
      */
