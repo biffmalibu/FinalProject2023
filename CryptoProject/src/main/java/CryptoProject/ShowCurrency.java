@@ -4,6 +4,7 @@
  */
 package CryptoProject;
 
+import java.text.DecimalFormat;
 import javax.swing.JLabel;
 
 /**
@@ -527,8 +528,8 @@ public class ShowCurrency extends javax.swing.JFrame {
                     .addComponent(selectedCurrency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
@@ -549,12 +550,11 @@ public class ShowCurrency extends javax.swing.JFrame {
             "USD", "EUR", "JPY", "GBP", "AUD",
             "CAD", "CHF", "CNY", "NOK", "MXN",
         };
-        //usdPrice.setText(String.valueOf(data.getConversionRate(base, "USD")));
-        //eurPrice.setText(String.valueOf(data.getConversionRate(base, "EUR")));
-        //jpyPrice.setText(String.valueOf(data.getConversionRate(base, "JPY")));
         JLabel[] prices = {usdPrice, eurPrice, jpyPrice, gbpPrice, audPrice, cadPrice, chfPrice, cnyPrice, nokPrice, mxnPrice};
+        DecimalFormat decimalFormat = new DecimalFormat("#,###.0000"); // Format the value with two decimal places and commas
+        decimalFormat.setMinimumFractionDigits(2); 
         for (int i = 0; i < prices.length; i++) {
-            prices[i].setText(String.valueOf(data.getConversionRate(base, currencies[i])));
+            prices[i].setText(String.valueOf(decimalFormat.format(data.getConversionRate(base, currencies[i]))));
         }
     }
     /**
