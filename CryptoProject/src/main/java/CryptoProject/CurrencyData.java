@@ -20,7 +20,9 @@ import javax.swing.JOptionPane;
  */
 public class CurrencyData {
     
-    private static Map<String, Map<String, Double>>  currencyPrices;   // Static map to store the currency prices                                   
+    private static Map<String, Map<String, Double>>  currencyPrices;   // Static map to store the currency prices   
+    private static Map<String, Map<String, Double>> historicPrices;
+    
     private final String[] currencies = { // Array of strings for the currency names
         "USD", "EUR", "JPY", "GBP", "AUD",
         "CAD", "CHF", "CNY", "NOK", "MXN",
@@ -28,17 +30,22 @@ public class CurrencyData {
     
     public CurrencyData() { // Initialize map to store currency data
         this.currencyPrices = new HashMap<>();
-        updateCurrencyData(); // Populate map with values
+        this.historicPrices = new HashMap<>();
+        updateCurrencyData("latest"); // Populate map with values
     }
     
     /**
      * Updates the map with currency conversions
      */
-    public void updateCurrencyData() {
+    public void updateCurrencyData(String endpoint) {
         try {
             String apiKey = "fVYGGBrh0nIwXt5UvnPMEqNDQPGkBrHn";
             String base = "USD";
-            String apiUrl = "https://api.currencybeacon.com/v1/latest?api_key=" + apiKey + "&base=" + base + "&symbols=" + String.join(",", currencies);
+            String date = "";
+            if(endpoint.equals("historical")) 
+                date = "&date=2023-11-07";
+            String apiUrl = "https://api.currencybeacon.com/v1/"+ endpoint + "?api_key=" + apiKey + "&base=" + base + date + "&symbols=" + String.join(",", currencies);
+            System.out.println(apiUrl);
             URL url = new URL(apiUrl);      // Create a URL object to store the API link
 
             InputStreamReader read = new InputStreamReader(url.openStream()); // Open an input stream to collect data from the API
@@ -58,7 +65,11 @@ public class CurrencyData {
                             exchangeRates.put(toCurrency, exchangeRate); // Store the converted exchange rate
                         }
                     }
-                    currencyPrices.put(fromCurrency, exchangeRates); // Add the map of exchange rates to currencyPrices
+                    if (endpoint.equals("latest")) 
+                        currencyPrices.put(fromCurrency, exchangeRates); // Add the map of exchange rates to currencyPrices
+                    else if (endpoint.equals("historical")) {
+                        historicPrices.put(fromCurrency, exchangeRates);
+                    }
                 }
 
                 // Print the currencyPrices
@@ -85,6 +96,14 @@ public class CurrencyData {
     public double getConversionRate(String fromCurrency, String toCurrency) {
         if (currencyPrices.containsKey(fromCurrency) && currencyPrices.get(fromCurrency).containsKey(toCurrency)) // Check if the fromCurrency and toCurrency exist in the currencyPrices map.
             return currencyPrices.get(fromCurrency).get(toCurrency);
+        else { // If the conversion rate is not available.
+            System.out.println("Conversion rate from " + fromCurrency + " to " + toCurrency + " is not available.");
+            return 0.0; // You can return a default value or handle the error as needed.
+        }
+    }
+    public double getHistoricRate(String fromCurrency, String toCurrency) {
+        if (historicPrices.containsKey(fromCurrency) && historicPrices.get(fromCurrency).containsKey(toCurrency)) // Check if the fromCurrency and toCurrency exist in the historicPrices map.
+            return historicPrices.get(fromCurrency).get(toCurrency);
         else { // If the conversion rate is not available.
             System.out.println("Conversion rate from " + fromCurrency + " to " + toCurrency + " is not available.");
             return 0.0; // You can return a default value or handle the error as needed.
