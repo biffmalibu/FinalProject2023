@@ -29,7 +29,7 @@ public class MainMenu extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         converterButton = new javax.swing.JButton();
         cryptoButton = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        currencyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,8 +51,12 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Currency Live Data");
-        jButton3.setEnabled(false);
+        currencyButton.setText("Currency Live Data");
+        currencyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                currencyButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,7 +70,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(cryptoButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(currencyButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(converterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(182, 182, 182))
         );
@@ -80,7 +84,7 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cryptoButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(currencyButton)
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
@@ -99,6 +103,12 @@ public class MainMenu extends javax.swing.JFrame {
         dispose();
         
     }//GEN-LAST:event_cryptoButtonActionPerformed
+
+    private void currencyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currencyButtonActionPerformed
+        // TODO add your handling code here:
+        new ShowCurrency().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_currencyButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,7 +147,7 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton converterButton;
     private javax.swing.JButton cryptoButton;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton currencyButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
