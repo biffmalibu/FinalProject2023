@@ -10,6 +10,8 @@ import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -43,8 +45,8 @@ public class CurrencyData {
             String apiKey = "fVYGGBrh0nIwXt5UvnPMEqNDQPGkBrHn";
             String base = "USD";
             String date = "";
-            if(endpoint.equals("historical")) 
-                date = "&date=2023-11-12";
+            if(endpoint.equals("historical"))                                                                                        // CODE FROM: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+                date = "&date=" + LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")); // CODE FROM: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
             String apiUrl = "https://api.currencybeacon.com/v1/"+ endpoint + "?api_key=" + apiKey + "&base=" + base + date + "&symbols=" + String.join(",", currencies);
             System.out.println(apiUrl);
             URL url = new URL(apiUrl);      // Create a URL object to store the API link
