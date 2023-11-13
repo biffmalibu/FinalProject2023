@@ -604,7 +604,10 @@ public class ShowCurrency extends javax.swing.JFrame {
             //System.out.println(currencies[i] + "->" + base + ": percentChange: " + percentChange); //test
             
             priceLabels[i].setText(symbol + decimalFormat.format(currentRate));
-            percentLabels[i].setText(String.format("%.4f", percentChange) + "%");
+            if (percentChange != 0)
+                percentLabels[i].setText(String.format("%.4f", percentChange) + "%");
+            else 
+                percentLabels[i].setText(percentChange.toString());
             if (percentChange >= 0)
                 percentLabels[i].setForeground(Color.GREEN);
             else if (percentChange < 0)
