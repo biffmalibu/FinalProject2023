@@ -608,10 +608,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 percentLabels[i].setText(String.format("%.4f", percentChange) + "%");
             else 
                 percentLabels[i].setText(percentChange.toString());
-            if (percentChange >= 0)
+            if (percentChange > 0)
                 percentLabels[i].setForeground(Color.GREEN);
             else if (percentChange < 0)
                 percentLabels[i].setForeground(Color.RED);
+            else
+                percentLabels[i].setForeground(Color.BLACK);
             if (dailyChange > 0) 
                 changeLabels[i].setText("+" + String.format("%.12f", dailyChange));
             else if (dailyChange < 0) 
