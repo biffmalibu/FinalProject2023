@@ -32,6 +32,7 @@ public class CurrencyData {
         this.currencyPrices = new HashMap<>();
         this.historicPrices = new HashMap<>();
         updateCurrencyData("latest"); // Populate map with values
+        updateCurrencyData("historical");
     }
     
     /**
@@ -43,7 +44,7 @@ public class CurrencyData {
             String base = "USD";
             String date = "";
             if(endpoint.equals("historical")) 
-                date = "&date=2023-11-07";
+                date = "&date=2023-11-12";
             String apiUrl = "https://api.currencybeacon.com/v1/"+ endpoint + "?api_key=" + apiKey + "&base=" + base + date + "&symbols=" + String.join(",", currencies);
             System.out.println(apiUrl);
             URL url = new URL(apiUrl);      // Create a URL object to store the API link
