@@ -7,6 +7,8 @@ package CryptoProject;
 import java.awt.Color;
 import java.text.DecimalFormat;
 import javax.swing.JLabel;
+import javax.swing.SwingWorker;
+import javax.swing.Timer;
 
 /**
  *
@@ -605,7 +607,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         });
 
         updateButton.setText("Update");
-        updateButton.setEnabled(false);
+        updateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                updateButtonActionPerformed(evt);
+            }
+        });
 
         backButton.setText("Back");
         backButton.addActionListener(new java.awt.event.ActionListener() {
@@ -675,6 +681,33 @@ public class ShowCurrency extends javax.swing.JFrame {
         new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
+    
+    /**
+     * Updates the API currency values and then prints the updated values
+     * 
+     * @param evt Update Button pressed
+     */
+    private void updateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateButtonActionPerformed
+        updateButton.setEnabled(false);
+        SwingWorker<Void, Void> buttonPressed = new SwingWorker<Void, Void>() {        //           https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/javax/swing/Timer.html                                                                                      
+            @Override                                                                  // Create a non blocking swingworker to run in the background
+            protected Void doInBackground() throws Exception {                         
+                data.updateCurrencyData("latest");                                          // Update the prices in the data class when the button is clicked
+                data.updateCurrencyData("historical"); 
+                updateCurrencyData(selectedCurrency.getSelectedItem().toString());  // Update the values
+                return null;
+            }
+            @Override
+            protected void done() {
+                Timer timer = new Timer(60000, e -> {
+                    updateButton.setEnabled(true); // Enable the button after one minute of being pressed
+                });
+                timer.setRepeats(false);                                               // Stop the timer from repeating
+                timer.start();
+            }
+        };
+        buttonPressed.execute();  
+    }//GEN-LAST:event_updateButtonActionPerformed
 
     /**
      * Updates the currencies prices and 24 hour change as a value and as a percentage
