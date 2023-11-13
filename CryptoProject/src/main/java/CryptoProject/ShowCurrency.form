@@ -163,7 +163,11 @@
                           <Component id="usdImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="usdLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="244" max="32767" attributes="0"/>
+                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                          <Component id="usdChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="usdChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="usdPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -177,6 +181,8 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="usdLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="usdPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="usdChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="usdChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="usdImage" max="32767" attributes="0"/>
                           </Group>
@@ -205,6 +211,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="usdChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="usdChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="eurPanel">
@@ -223,6 +239,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="eurLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="eurChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="eurChangePercent" min="-2" pref="63" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="eurPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -236,6 +256,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="eurLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="eurPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="eurChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="eurChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="eurImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -264,6 +286,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="eurChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="eurChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="jpyPanel">
@@ -282,6 +314,10 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jpyLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jpyChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="jpyChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jpyPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -295,6 +331,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="jpyLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="jpyPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="jpyChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jpyChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jpyImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -321,6 +359,16 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Loading..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jpyChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jpyChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
                   </Properties>
                 </Component>
               </SubComponents>
