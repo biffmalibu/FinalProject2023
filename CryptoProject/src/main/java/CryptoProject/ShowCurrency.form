@@ -162,8 +162,8 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="usdImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="usdLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                          <Component id="usdLabel" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="usdChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="usdChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
@@ -237,8 +237,8 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="eurImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="eurLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="eurLabel" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="eurChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="eurChangePercent" min="-2" pref="63" max="-2" attributes="0"/>
@@ -312,8 +312,8 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jpyImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jpyLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jpyLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jpyChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           <Component id="jpyChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
@@ -387,8 +387,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="gbpImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="gbpLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="gbpLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="gbpChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="gbpChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="gbpPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -402,6 +406,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="gbpLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="gbpPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="gbpChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="gbpChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="gbpImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -430,6 +436,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="gbpChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="gbpChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="audPanel">
@@ -446,8 +462,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="audImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="audLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="audLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="audChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="audChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="audPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -461,6 +481,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="audLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="audPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="audChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="audChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="audImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -489,6 +511,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="audChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="audChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="cadPanel">
@@ -505,8 +537,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="cadImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cadLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="cadLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="cadChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cadChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="cadPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -520,6 +556,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="cadLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="cadPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="cadChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cadChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="cadImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -548,6 +586,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="cadChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="cadChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="chfPanel">
@@ -564,8 +612,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="chfImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="chfLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="chfLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="chfChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="chfChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="chfPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -579,6 +631,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="chfLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="chfPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="chfChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="chfChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="chfImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -607,6 +661,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="chfChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="chfChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="cnyPanel">
@@ -623,8 +687,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="cnyImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="cnyLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="cnyLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="cnyChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="cnyChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="cnyPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -638,6 +706,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="cnyLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="cnyPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="cnyChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cnyChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="cnyImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -666,6 +736,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="cnyChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="cnyChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="nokPanel">
@@ -682,8 +762,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="nokImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="nokLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="nokLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="nokChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="nokChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="nokPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -697,6 +781,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="nokLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="nokPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="nokChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nokChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="nokImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -725,6 +811,16 @@
                     <Property name="text" type="java.lang.String" value="Loading..."/>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JLabel" name="nokChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="nokChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
+                  </Properties>
+                </Component>
               </SubComponents>
             </Container>
             <Container class="javax.swing.JPanel" name="mxnPanel">
@@ -741,8 +837,12 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="mxnImage" min="-2" pref="38" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="mxnLabel" min="-2" max="-2" attributes="0"/>
+                          <Component id="mxnLabel" min="-2" pref="242" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="mxnChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="mxnChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="mxnPrice" min="-2" pref="115" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -756,6 +856,8 @@
                               <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                                   <Component id="mxnLabel" alignment="3" pref="38" max="32767" attributes="0"/>
                                   <Component id="mxnPrice" alignment="3" pref="38" max="32767" attributes="0"/>
+                                  <Component id="mxnChangePercent" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="mxnChangeValue" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="mxnImage" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -782,6 +884,16 @@
                     </Property>
                     <Property name="horizontalAlignment" type="int" value="2"/>
                     <Property name="text" type="java.lang.String" value="Loading..."/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="mxnChangePercent">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="%"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="mxnChangeValue">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="+-"/>
                   </Properties>
                 </Component>
               </SubComponents>

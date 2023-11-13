@@ -19,8 +19,8 @@ public class ShowCurrency extends javax.swing.JFrame {
      */
     public ShowCurrency() {
         initComponents();
-        data = new CurrencyData();
-        updateCurrencyData(selectedCurrency.getSelectedItem().toString());
+        data = new CurrencyData(); // Create an instance of currency data for the prices
+        updateCurrencyData(selectedCurrency.getSelectedItem().toString()); // Initially populate the values
     }
 
     /**
@@ -57,30 +57,44 @@ public class ShowCurrency extends javax.swing.JFrame {
         gbpImage = new javax.swing.JLabel();
         gbpLabel = new javax.swing.JLabel();
         gbpPrice = new javax.swing.JLabel();
+        gbpChangeValue = new javax.swing.JLabel();
+        gbpChangePercent = new javax.swing.JLabel();
         audPanel = new javax.swing.JPanel();
         audImage = new javax.swing.JLabel();
         audLabel = new javax.swing.JLabel();
         audPrice = new javax.swing.JLabel();
+        audChangePercent = new javax.swing.JLabel();
+        audChangeValue = new javax.swing.JLabel();
         cadPanel = new javax.swing.JPanel();
         cadImage = new javax.swing.JLabel();
         cadLabel = new javax.swing.JLabel();
         cadPrice = new javax.swing.JLabel();
+        cadChangePercent = new javax.swing.JLabel();
+        cadChangeValue = new javax.swing.JLabel();
         chfPanel = new javax.swing.JPanel();
         chfImage = new javax.swing.JLabel();
         chfLabel = new javax.swing.JLabel();
         chfPrice = new javax.swing.JLabel();
+        chfChangePercent = new javax.swing.JLabel();
+        chfChangeValue = new javax.swing.JLabel();
         cnyPanel = new javax.swing.JPanel();
         cnyImage = new javax.swing.JLabel();
         cnyLabel = new javax.swing.JLabel();
         cnyPrice = new javax.swing.JLabel();
+        cnyChangePercent = new javax.swing.JLabel();
+        cnyChangeValue = new javax.swing.JLabel();
         nokPanel = new javax.swing.JPanel();
         nokImage = new javax.swing.JLabel();
         nokLabel = new javax.swing.JLabel();
         nokPrice = new javax.swing.JLabel();
+        nokChangePercent = new javax.swing.JLabel();
+        nokChangeValue = new javax.swing.JLabel();
         mxnPanel = new javax.swing.JPanel();
         mxnImage = new javax.swing.JLabel();
         mxnLabel = new javax.swing.JLabel();
         mxnPrice = new javax.swing.JLabel();
+        mxnChangePercent = new javax.swing.JLabel();
+        mxnChangeValue = new javax.swing.JLabel();
         selectedCurrency = new javax.swing.JComboBox<>();
         updateButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
@@ -117,8 +131,8 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(usdImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(usdLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(usdLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(usdChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addComponent(usdChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,8 +175,8 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(eurImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(eurLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(eurLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(eurChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(eurChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,8 +219,8 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jpyImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpyLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jpyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jpyChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jpyChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,6 +251,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         gbpPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         gbpPrice.setText("Loading...");
 
+        gbpChangeValue.setText("+-");
+
+        gbpChangePercent.setText("%");
+
         javax.swing.GroupLayout gbpPanelLayout = new javax.swing.GroupLayout(gbpPanel);
         gbpPanel.setLayout(gbpPanelLayout);
         gbpPanelLayout.setHorizontalGroup(
@@ -245,8 +263,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(gbpImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(gbpLabel)
+                .addComponent(gbpLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(gbpChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(gbpChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(gbpPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -257,7 +279,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(gbpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(gbpPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(gbpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(gbpPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(gbpPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(gbpChangeValue)
+                        .addComponent(gbpChangePercent))
                     .addComponent(gbpImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -271,6 +295,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         audPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         audPrice.setText("Loading...");
 
+        audChangePercent.setText("%");
+
+        audChangeValue.setText("+-");
+
         javax.swing.GroupLayout audPanelLayout = new javax.swing.GroupLayout(audPanel);
         audPanel.setLayout(audPanelLayout);
         audPanelLayout.setHorizontalGroup(
@@ -279,8 +307,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(audImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(audLabel)
+                .addComponent(audLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(audChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(audChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(audPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -291,7 +323,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(audPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(audPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(audLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(audPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(audPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(audChangePercent)
+                        .addComponent(audChangeValue))
                     .addComponent(audImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -305,6 +339,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         cadPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cadPrice.setText("Loading...");
 
+        cadChangePercent.setText("%");
+
+        cadChangeValue.setText("+-");
+
         javax.swing.GroupLayout cadPanelLayout = new javax.swing.GroupLayout(cadPanel);
         cadPanel.setLayout(cadPanelLayout);
         cadPanelLayout.setHorizontalGroup(
@@ -313,8 +351,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(cadImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cadLabel)
+                .addComponent(cadLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(cadChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cadChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(cadPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -325,7 +367,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(cadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cadPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cadLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(cadPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(cadPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(cadChangePercent)
+                        .addComponent(cadChangeValue))
                     .addComponent(cadImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -339,6 +383,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         chfPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         chfPrice.setText("Loading...");
 
+        chfChangePercent.setText("%");
+
+        chfChangeValue.setText("+-");
+
         javax.swing.GroupLayout chfPanelLayout = new javax.swing.GroupLayout(chfPanel);
         chfPanel.setLayout(chfPanelLayout);
         chfPanelLayout.setHorizontalGroup(
@@ -347,8 +395,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(chfImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chfLabel)
+                .addComponent(chfLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(chfChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chfChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(chfPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -359,7 +411,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(chfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(chfPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(chfLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(chfPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(chfPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(chfChangePercent)
+                        .addComponent(chfChangeValue))
                     .addComponent(chfImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -373,6 +427,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         cnyPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         cnyPrice.setText("Loading...");
 
+        cnyChangePercent.setText("%");
+
+        cnyChangeValue.setText("+-");
+
         javax.swing.GroupLayout cnyPanelLayout = new javax.swing.GroupLayout(cnyPanel);
         cnyPanel.setLayout(cnyPanelLayout);
         cnyPanelLayout.setHorizontalGroup(
@@ -381,8 +439,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(cnyImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cnyLabel)
+                .addComponent(cnyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(cnyChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(cnyChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(cnyPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -393,7 +455,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(cnyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(cnyPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(cnyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(cnyPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(cnyPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(cnyChangePercent)
+                        .addComponent(cnyChangeValue))
                     .addComponent(cnyImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -407,6 +471,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         nokPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         nokPrice.setText("Loading...");
 
+        nokChangePercent.setText("%");
+
+        nokChangeValue.setText("+-");
+
         javax.swing.GroupLayout nokPanelLayout = new javax.swing.GroupLayout(nokPanel);
         nokPanel.setLayout(nokPanelLayout);
         nokPanelLayout.setHorizontalGroup(
@@ -415,8 +483,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(nokImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nokLabel)
+                .addComponent(nokLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(nokChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(nokChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(nokPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -427,7 +499,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(nokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(nokPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(nokLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(nokPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(nokPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(nokChangePercent)
+                        .addComponent(nokChangeValue))
                     .addComponent(nokImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -441,6 +515,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         mxnPrice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         mxnPrice.setText("Loading...");
 
+        mxnChangePercent.setText("%");
+
+        mxnChangeValue.setText("+-");
+
         javax.swing.GroupLayout mxnPanelLayout = new javax.swing.GroupLayout(mxnPanel);
         mxnPanel.setLayout(mxnPanelLayout);
         mxnPanelLayout.setHorizontalGroup(
@@ -449,8 +527,12 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(mxnImage, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(mxnLabel)
+                .addComponent(mxnLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(mxnChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mxnChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(mxnPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -461,7 +543,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addGroup(mxnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mxnPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(mxnLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                        .addComponent(mxnPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE))
+                        .addComponent(mxnPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                        .addComponent(mxnChangePercent)
+                        .addComponent(mxnChangeValue))
                     .addComponent(mxnImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -572,54 +656,68 @@ public class ShowCurrency extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Calls the function to update the JLabels with the selected currency's conversions.
+     * 
+     * @param evt Selected currency changed
+     */
     private void selectedCurrencyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedCurrencyActionPerformed
         updateCurrencyData(selectedCurrency.getSelectedItem().toString());  // Update the values
     }//GEN-LAST:event_selectedCurrencyActionPerformed
 
+    /**
+     * Go back to the main menu
+     * 
+     * @param evt Back button pressed
+     */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
         new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
+    /**
+     * Updates the currencies prices and 24 hour change as a value and as a percentage
+     * 
+     * @param base The selected currency to convert to
+     */
     private void updateCurrencyData(String base) {
-        String symbol = getCurrencySymbol(base);
+        String symbol = getCurrencySymbol(base); // Get the currency symbol to use
         String[] currencies = { // Array of strings for the currency names
             "USD", "EUR", "JPY", "GBP", "AUD",
             "CAD", "CHF", "CNY", "NOK", "MXN",
         };
-        JLabel[] priceLabels = {usdPrice, eurPrice, jpyPrice, gbpPrice, audPrice, cadPrice, chfPrice, cnyPrice, nokPrice, mxnPrice};
-        JLabel[] percentLabels = {usdChangePercent, eurChangePercent, jpyChangePercent};
-        JLabel[] changeLabels = {usdChangeValue, eurChangeValue, jpyChangeValue};
+        JLabel[] priceLabels = {usdPrice, eurPrice, jpyPrice, gbpPrice, audPrice, cadPrice, chfPrice, cnyPrice, nokPrice, mxnPrice}; // JLabels for easy access
+        JLabel[] percentLabels = {usdChangePercent, eurChangePercent, jpyChangePercent, gbpChangePercent, audChangePercent, cadChangePercent, chfChangePercent, cnyChangePercent, nokChangePercent, mxnChangePercent};
+        JLabel[] changeLabels = {usdChangeValue, eurChangeValue, jpyChangeValue, gbpChangeValue, audChangeValue, cadChangeValue, chfChangeValue, cnyChangeValue, nokChangeValue, mxnChangeValue};
         DecimalFormat decimalFormat = new DecimalFormat("0.0###"); // Format the value with two decimal places and commas
         decimalFormat.setGroupingUsed(true); // Enable comma grouping
-        for (int i = 0; /*i < priceLabels.length;*/i<3; i++) {
-            Double currentRate = data.getConversionRate(currencies[i], base);
+        for (int i = 0; i < priceLabels.length; i++) {
+            Double currentRate = data.getConversionRate(currencies[i], base); // Calcukate the current and historic rates
             Double historicRate = data.getHistoricRate(currencies[i], base);
-            //System.out.println(currencies[i] + "->" + base + ": Current rate: " + currentRate + " Historic rate: " + historicRate); // test
-            Double dailyChange = currentRate - historicRate;
-            //System.out.println(currencies[i] + "->" + base + ": dailyChange: " + dailyChange); //test
+            Double dailyChange = currentRate - historicRate;     // Find the difference and also convert the different to a percentage
+            Double percentChange = (dailyChange/historicRate) * 100; 
             
-            Double percentChange = (dailyChange/historicRate) * 100; // changed
-            //System.out.println(currencies[i] + "->" + base + ": percentChange: " + percentChange); //test
+            priceLabels[i].setText(symbol + decimalFormat.format(currentRate)); // Set the price label
             
-            priceLabels[i].setText(symbol + decimalFormat.format(currentRate));
             if (percentChange != 0)
-                percentLabels[i].setText(String.format("%.4f", percentChange) + "%");
+                percentLabels[i].setText(String.format("%.4f", percentChange) + "%"); // Print the percentage with 4 decimal places
             else 
-                percentLabels[i].setText(percentChange.toString());
+                percentLabels[i].setText(percentChange.toString()); // Just print 0.0 when the percent is 0%
+            
             if (percentChange > 0)
-                percentLabels[i].setForeground(Color.GREEN);
+                percentLabels[i].setForeground(Color.GREEN); // Adjust the color of the percentage if it is negative or positve, or 0.
             else if (percentChange < 0)
                 percentLabels[i].setForeground(Color.RED);
             else
                 percentLabels[i].setForeground(Color.BLACK);
-            if (dailyChange > 0) 
-                changeLabels[i].setText("+" + String.format("%.12f", dailyChange));
+            
+            if (dailyChange > 0) // Add a "+" if positive 
+                changeLabels[i].setText("+" + String.format("%.12f", dailyChange));  // Print the difference with 12 decimal places
             else if (dailyChange < 0) 
-                changeLabels[i].setText(String.format("%.12f", dailyChange));
+                changeLabels[i].setText(String.format("%.12f", dailyChange)); // Print the difference with 12 decimal places
             else
-                changeLabels[i].setText(dailyChange.toString());
+                changeLabels[i].setText(dailyChange.toString()); // Print the difference as 0.0 if only 0.
             
         }
     }
@@ -687,19 +785,27 @@ public class ShowCurrency extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Title;
+    private javax.swing.JLabel audChangePercent;
+    private javax.swing.JLabel audChangeValue;
     private javax.swing.JLabel audImage;
     private javax.swing.JLabel audLabel;
     private javax.swing.JPanel audPanel;
     private javax.swing.JLabel audPrice;
     private javax.swing.JButton backButton;
+    private javax.swing.JLabel cadChangePercent;
+    private javax.swing.JLabel cadChangeValue;
     private javax.swing.JLabel cadImage;
     private javax.swing.JLabel cadLabel;
     private javax.swing.JPanel cadPanel;
     private javax.swing.JLabel cadPrice;
+    private javax.swing.JLabel chfChangePercent;
+    private javax.swing.JLabel chfChangeValue;
     private javax.swing.JLabel chfImage;
     private javax.swing.JLabel chfLabel;
     private javax.swing.JPanel chfPanel;
     private javax.swing.JLabel chfPrice;
+    private javax.swing.JLabel cnyChangePercent;
+    private javax.swing.JLabel cnyChangeValue;
     private javax.swing.JLabel cnyImage;
     private javax.swing.JLabel cnyLabel;
     private javax.swing.JPanel cnyPanel;
@@ -710,6 +816,8 @@ public class ShowCurrency extends javax.swing.JFrame {
     private javax.swing.JLabel eurLabel;
     private javax.swing.JPanel eurPanel;
     private javax.swing.JLabel eurPrice;
+    private javax.swing.JLabel gbpChangePercent;
+    private javax.swing.JLabel gbpChangeValue;
     private javax.swing.JLabel gbpImage;
     private javax.swing.JLabel gbpLabel;
     private javax.swing.JPanel gbpPanel;
@@ -720,10 +828,14 @@ public class ShowCurrency extends javax.swing.JFrame {
     private javax.swing.JLabel jpyLabel;
     private javax.swing.JPanel jpyPanel;
     private javax.swing.JLabel jpyPrice;
+    private javax.swing.JLabel mxnChangePercent;
+    private javax.swing.JLabel mxnChangeValue;
     private javax.swing.JLabel mxnImage;
     private javax.swing.JLabel mxnLabel;
     private javax.swing.JPanel mxnPanel;
     private javax.swing.JLabel mxnPrice;
+    private javax.swing.JLabel nokChangePercent;
+    private javax.swing.JLabel nokChangeValue;
     private javax.swing.JLabel nokImage;
     private javax.swing.JLabel nokLabel;
     private javax.swing.JPanel nokPanel;
