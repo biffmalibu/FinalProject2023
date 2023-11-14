@@ -24,6 +24,7 @@ public class CurrencyData {
     
     private static Map<String, Map<String, Double>>  currencyPrices;   // Static map to store the currency prices   
     private static Map<String, Map<String, Double>> historicPrices;
+    private static String dataDate;
     
     private final String[] currencies = { // Array of strings for the currency names
         "USD", "EUR", "JPY", "GBP", "AUD",
@@ -57,7 +58,10 @@ public class CurrencyData {
 
             if (jsonObject.has("response") && jsonObject.getAsJsonObject("response").has("rates")) {
                 JsonObject rates = jsonObject.getAsJsonObject("response").getAsJsonObject("rates");
-
+                
+                if (endpoint.equals("latest")) 
+                    dataDate = jsonObject.getAsJsonObject("response").get("date").getAsString();// Store the date of the data
+                
                 for (String fromCurrency : currencies) { // Iterate over the 10 currencies in the currencies array
                     Map<String, Double> exchangeRates = new HashMap<>(); // Initialize a map to store each conversion
                     for (String toCurrency : currencies) {
@@ -68,22 +72,13 @@ public class CurrencyData {
                             exchangeRates.put(toCurrency, exchangeRate); // Store the converted exchange rate
                         }
                     }
-                    if (endpoint.equals("latest")) 
+                    if (endpoint.equals("latest")) {
                         currencyPrices.put(fromCurrency, exchangeRates); // Add the map of exchange rates to currencyPrices
+                    }
                     else if (endpoint.equals("historical")) {
                         historicPrices.put(fromCurrency, exchangeRates);
                     }
                 }
-
-                // Print the currencyPrices
-                /*for (String fromCurrency : currencyPrices.keySet()) {
-                    Map<String, Double> exchangeRates = currencyPrices.get(fromCurrency);
-                    for (String toCurrency : exchangeRates.keySet()) {
-                        double rate = exchangeRates.get(toCurrency);
-                        System.out.println(fromCurrency + " to " + toCurrency + ": " + rate);
-                    }
-                }
-                */
             }
         } catch (IOException e) { // Catch an IOException in the event of a problem with the API
             JOptionPane.showMessageDialog(null, "Crypto prices are currently unavailable. The API has been rate limited.\nPlease try again later.", "API ERROR", JOptionPane.ERROR_MESSAGE);
@@ -118,5 +113,14 @@ public class CurrencyData {
             System.out.println("Conversion rate from " + fromCurrency + " to " + toCurrency + " is not available.");
             return 0.0; // You can return a default value or handle the error as needed.
         }
+    }
+    
+    /**
+     * Returns the date of the data.
+     * 
+     * @return The date of the currency data
+     */
+    public String getDate() {
+        return dataDate;
     }
 }
