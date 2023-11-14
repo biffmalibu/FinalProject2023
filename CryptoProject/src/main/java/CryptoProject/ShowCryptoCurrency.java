@@ -176,6 +176,8 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
 
         bitcoinPanel.setBackground(new java.awt.Color(153, 153, 153));
 
+        bitcoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bitcoin.png"))); // NOI18N
+
         bitcoinLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         bitcoinLabel.setText("Bitcoin");
 
