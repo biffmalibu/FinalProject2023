@@ -209,6 +209,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="bitcoinImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/bitcoin.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="bitcoinLabel">
                   <Properties>
@@ -296,6 +302,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="ethereumImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/ethereum.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="ethereumLabel">
                   <Properties>
@@ -383,6 +395,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="litecoinImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/litecoin.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="litecoinLabel">
                   <Properties>
@@ -470,6 +488,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="dogecoinImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/dogecoin.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="dogecoinLabel">
                   <Properties>
@@ -557,6 +581,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="cardanoImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/cardano.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cardanoLabel">
                   <Properties>
@@ -644,6 +674,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="SolanaImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/solana.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="SolanaLabel">
                   <Properties>
@@ -731,6 +767,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="MoneroImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/monero.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="MoneroLabel">
                   <Properties>
@@ -818,6 +860,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="PolkadotImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/polkadot.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="PolkadotLabel">
                   <Properties>
@@ -905,6 +953,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="RippleImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/xrp.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="RippleLabel">
                   <Properties>
@@ -992,6 +1046,12 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="BinancecoinImage">
+                  <Properties>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/binancecoin.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="BinancecoinLabel">
                   <Properties>

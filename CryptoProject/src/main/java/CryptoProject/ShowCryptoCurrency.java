@@ -176,6 +176,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
 
         bitcoinPanel.setBackground(new java.awt.Color(153, 153, 153));
 
+        bitcoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        bitcoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bitcoin.png"))); // NOI18N
+
         bitcoinLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         bitcoinLabel.setText("Bitcoin");
 
@@ -224,6 +227,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         ethereumPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        ethereumImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ethereumImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ethereum.png"))); // NOI18N
 
         ethereumLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         ethereumLabel.setText("Ethereum");
@@ -274,6 +280,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
 
         litecoinPanel.setBackground(new java.awt.Color(153, 153, 153));
 
+        litecoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        litecoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/litecoin.png"))); // NOI18N
+
         litecoinLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         litecoinLabel.setText("Litecoin");
 
@@ -322,6 +331,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         dogecoinPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        dogecoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        dogecoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dogecoin.png"))); // NOI18N
 
         dogecoinLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         dogecoinLabel.setText("Dogecoin");
@@ -372,6 +384,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
 
         cardanoPanel.setBackground(new java.awt.Color(153, 153, 153));
 
+        cardanoImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cardanoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cardano.png"))); // NOI18N
+
         cardanoLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cardanoLabel.setText("Cardano");
 
@@ -420,6 +435,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         SolanaPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        SolanaImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        SolanaImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/solana.png"))); // NOI18N
 
         SolanaLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         SolanaLabel.setText("Solana");
@@ -470,6 +488,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
 
         MoneroPanel.setBackground(new java.awt.Color(153, 153, 153));
 
+        MoneroImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MoneroImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/monero.png"))); // NOI18N
+
         MoneroLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         MoneroLabel.setText("Monero");
 
@@ -518,6 +539,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         PolkadotPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        PolkadotImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        PolkadotImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polkadot.png"))); // NOI18N
 
         PolkadotLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         PolkadotLabel.setText("Polkadot");
@@ -568,6 +592,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
 
         RipplePanel.setBackground(new java.awt.Color(153, 153, 153));
 
+        RippleImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        RippleImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/xrp.png"))); // NOI18N
+
         RippleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         RippleLabel.setText("Ripple");
 
@@ -616,6 +643,9 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         BinancecoinPanel.setBackground(new java.awt.Color(153, 153, 153));
+
+        BinancecoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        BinancecoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/binancecoin.png"))); // NOI18N
 
         BinancecoinLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         BinancecoinLabel.setText("Binancecoin");
