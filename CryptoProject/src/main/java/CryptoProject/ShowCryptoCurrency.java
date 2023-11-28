@@ -811,7 +811,7 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
                     .addComponent(labelsLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(0, 0, 0)
                 .addComponent(valuesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
-                .addGap(57, 57, 57))
+                .addGap(45, 45, 45))
         );
 
         pack();

@@ -63,7 +63,7 @@ public class CryptoData {
                 //System.out.println("Incorrect API values were retrieved... Last: " + lastUpdatedValue + " " + new Date(Long.parseLong(String.valueOf(lastUpdatedValue)) * 1000) + " Received: " + curLastUpdated + " " + new Date(Long.parseLong(String.valueOf(curLastUpdated)) * 1000));
                 return;
             } 
-            lastUpdatedValue = curLastUpdated;
+            lastUpdatedValue = curLastUpdated; // Check if the new data is old -- Some strange quirk with the API
             //System.out.println("Current Time: " + lastUpdated + " " + new Date(Long.parseLong(String.valueOf(lastUpdated)) * 1000));
             long epoch = Long.parseLong(lastUpdated);
             date = new Date(epoch * 1000); // Convert the epoch time to a date object

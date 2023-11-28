@@ -10,8 +10,10 @@ import com.google.gson.JsonParser;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
@@ -24,7 +26,7 @@ public class CurrencyData {
     
     private static Map<String, Map<String, Double>>  currencyPrices;   // Static map to store the currency prices   
     private static Map<String, Map<String, Double>> historicPrices;
-    private static String dataDate;
+    private static Date dataDate;
     
     private final String[] currencies = { // Array of strings for the currency names
         "USD", "EUR", "JPY", "GBP", "AUD",
@@ -58,9 +60,11 @@ public class CurrencyData {
 
             if (jsonObject.has("response") && jsonObject.getAsJsonObject("response").has("rates")) {
                 JsonObject rates = jsonObject.getAsJsonObject("response").getAsJsonObject("rates");
-                
-                if (endpoint.equals("latest")) 
-                    dataDate = jsonObject.getAsJsonObject("response").get("date").getAsString();// Store the date of the data
+                if (endpoint.equals("latest")) { // Convert the zulu time from the API to a date object for consistency
+                    String dateFromJSON = jsonObject.getAsJsonObject("response").get("date").getAsString(); // Store the date of the data
+                    long epoch = Instant.parse(dateFromJSON).toEpochMilli(); // CODE FROM: https://www.geeksforgeeks.org/instant-toepochmilli-method-in-java-with-examples/
+                    dataDate = new Date(epoch);
+                }
                 
                 for (String fromCurrency : currencies) { // Iterate over the 10 currencies in the currencies array
                     Map<String, Double> exchangeRates = new HashMap<>(); // Initialize a map to store each conversion
@@ -120,7 +124,7 @@ public class CurrencyData {
      * 
      * @return The date of the currency data
      */
-    public String getDate() {
+    public Date getDate() {
         return dataDate;
     }
 }
