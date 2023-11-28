@@ -34,6 +34,7 @@ public class CryptoData {
     private static Map<String, Double> coinValueChanges;                    //      coinPrices                         coinValueChanges
     private static Map<String, Map<String, Double>> coinVolume;             //          bitcoin:                            bitcoin: x.x%
     private static Map<String, Map<String, Double>> coinMarketCap;          //              usd: xx,xxx.xx                  ethereum: x.x%
+    private static int lastUpdatedValue;
                                                                             //              eur: xx,xxx.xx                  litecoin: x.x%
     public CryptoData() {                                                //              (...)                           (...)
         this.coinPrices = new HashMap<>();   // Initialize maps to store cryptocurrency data
@@ -55,15 +56,24 @@ public class CryptoData {
             InputStreamReader read = new InputStreamReader(url.openStream()); // Open an input stream to collect data from the API
             JsonElement element = JsonParser.parseReader(read);            // Parse the data from the API into a JsonObject
             JsonObject jsonObject = element.getAsJsonObject();
-
+            
+            String lastUpdated = jsonObject.getAsJsonObject("bitcoin").get("last_updated_at").toString(); // Get the last updated value in epoch time
+            int curLastUpdated = Integer.parseInt(lastUpdated);
+            if (lastUpdatedValue != 0 && lastUpdatedValue > curLastUpdated) {
+                //System.out.println("Incorrect API values were retrieved... Last: " + lastUpdatedValue + " " + new Date(Long.parseLong(String.valueOf(lastUpdatedValue)) * 1000) + " Received: " + curLastUpdated + " " + new Date(Long.parseLong(String.valueOf(curLastUpdated)) * 1000));
+                return;
+            } 
+            lastUpdatedValue = curLastUpdated;
+            //System.out.println("Current Time: " + lastUpdated + " " + new Date(Long.parseLong(String.valueOf(lastUpdated)) * 1000));
+            long epoch = Long.parseLong(lastUpdated);
+            date = new Date(epoch * 1000); // Convert the epoch time to a date object
+            
             for (String coin : coins) {                                          // Iterate over the 10 cryptocurrencies in the coins array
                 Map<String, Double> marketCaps = new HashMap<>();                // Initialize maps to store market caps, prices, and volumes for the coins
                 Map<String, Double> prices = new HashMap<>();
                 Map<String, Double> volumes = new HashMap<>();
                 double valueChange = jsonObject.getAsJsonObject(coin).get("usd_24h_change").getAsDouble(); // Get the 24h change as a percentage from the JsonObject
-                String lastUpdated = jsonObject.getAsJsonObject(coin).get("last_updated_at").toString(); // Get the last updated value in epoch time
-                long epoch = Long.parseLong(lastUpdated);
-                date = new Date(epoch * 1000); // Convert the epoch time to a date object
+                
                 coinValueChanges.put(coin, valueChange);
                 
                 for (String currency : currencies) {                             // Iterate over each currency to collect data from the JsonObject for each one
