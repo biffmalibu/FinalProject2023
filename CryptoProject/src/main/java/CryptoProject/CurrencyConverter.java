@@ -243,34 +243,24 @@ public class CurrencyConverter extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
 
     /*
-    * Enables the reset button when changes are made
+    * Updates reset button state if reset button conditions are met
     */
     private void selectedCurrencyOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedCurrencyOneActionPerformed
-        if(selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin") && currencyAmount.getText().equals(""))  
-            resetButton.setEnabled(false); // If the reset conditions are met, disable the button
-        else
-            resetButton.setEnabled(true); // Otherwise, enable it
+        checkForResetConditionsMet();
     }//GEN-LAST:event_selectedCurrencyOneActionPerformed
     
     /*
-    * Enables the reset button when changes are made
+    * Updates reset button state if reset button conditions are met
     */
     private void selectedCurrencyTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedCurrencyTwoActionPerformed
-        if(selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin") && currencyAmount.getText().equals(""))  
-            resetButton.setEnabled(false); // If the reset conditions are met, disable the button
-        else
-            resetButton.setEnabled(true); // Otherwise, enable it
+        checkForResetConditionsMet();
     }//GEN-LAST:event_selectedCurrencyTwoActionPerformed
 
     /** 
      *  Disables the swap and convert button on incorrect input, and changes the text to red. Enables again on correct input.
      */
     private void onCurrencyAmountTextChanged() {
-        if (currencyAmount.getText().equals("") && selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin"))  {
-            resetButton.setEnabled(false); // Disable the button if the amount field is empty and both currencies are already reset
-        }
-        else
-            resetButton.setEnabled(true); // Otherwise, enable the box
+        checkForResetConditionsMet();
         String amountText = currencyAmount.getText();  // Get the amount text
         // Check if the text is empty or not a valid double
         boolean isValid = !amountText.isEmpty(); // Create a boolean to track the state of the text
@@ -315,7 +305,16 @@ public class CurrencyConverter extends javax.swing.JFrame {
             value = String.valueOf(CryptoResultFormat.format(data.getPrice(fromCurrency.toLowerCase(), "usd")/data.getPrice(toCurrency.toLowerCase(), "usd") * amount));
             currencyResult.setText(amount + " " + fromCurrency.substring(0, 1).toUpperCase() + fromCurrency.substring(1) + " = " + value + " " + toCurrency.substring(0, 1).toUpperCase() + toCurrency.substring(1)); //CODE FROM: https://www.javatpoint.com/how-to-capitalize-the-first-letter-of-a-string-in-java
         }
-    }   
+    }  
+    /*
+    * Disables the reset button if the converter is already reset. If not, enables the button.
+    */
+    private void checkForResetConditionsMet() {
+       if(selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin") && currencyAmount.getText().equals(""))
+            resetButton.setEnabled(false); // Disable the button if the amount field is empty and both currencies are already reset
+        else
+            resetButton.setEnabled(true); // Otherwise, enable the button
+    }
     
     /**
      * @param args the command line arguments
