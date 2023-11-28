@@ -112,7 +112,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="usdPanel" max="32767" attributes="0"/>
                           <Component id="eurPanel" alignment="0" max="32767" attributes="0"/>
@@ -125,7 +125,7 @@
                           <Component id="nokPanel" alignment="0" max="32767" attributes="0"/>
                           <Component id="mxnPanel" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -333,7 +333,7 @@
                           <Component id="jpyLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jpyChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="jpyChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jpyPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -413,7 +413,7 @@
                           <Component id="gbpLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="gbpChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="gbpChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="gbpPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -493,7 +493,7 @@
                           <Component id="audLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="audChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="audChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="audPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -573,7 +573,7 @@
                           <Component id="cadLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="cadChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="cadChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="cadPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -648,7 +648,7 @@
                           <Component id="chfLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="chfChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="chfChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="chfPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -723,7 +723,7 @@
                           <Component id="cnyLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="cnyChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="cnyChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="cnyPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -798,7 +798,7 @@
                           <Component id="nokLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="nokChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="nokChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="nokPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -873,7 +873,7 @@
                           <Component id="mxnLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="mxnChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="80" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Component id="mxnChangePercent" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="mxnPrice" min="-2" pref="115" max="-2" attributes="0"/>
