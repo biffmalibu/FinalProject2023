@@ -4,6 +4,7 @@ CryptoProject\ShowCurrency$2.class
 CryptoProject\ShowCurrency.class
 CryptoProject\MainMenu$2.class
 CryptoProject\CryptoData.class
+CryptoProject\CurrencyConverter$6.class
 CryptoProject\ShowCryptoCurrency$6.class
 CryptoProject\CurrencyConverter.class
 CryptoProject\MainMenu.class
@@ -24,3 +25,4 @@ CryptoProject\CurrencyData.class
 CryptoProject\ShowCryptoCurrency$4.class
 CryptoProject\MainMenu$1.class
 CryptoProject\ShowCurrency$5.class
+CryptoProject\CurrencyConverter$7.class

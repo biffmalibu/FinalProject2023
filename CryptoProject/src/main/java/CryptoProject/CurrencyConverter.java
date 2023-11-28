@@ -23,6 +23,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         initComponents();
         convertButton.setEnabled(false); // Disable the buttons initially
         swapButton.setEnabled(false);
+        resetButton.setEnabled(false);
         currencyAmount.getDocument().addDocumentListener(new DocumentListener() { // Add a document listener to disable or enable the buttons based on input
             @Override                                                             // Dissallow empty, or non-double inputs
             public void insertUpdate(DocumentEvent e) {
@@ -86,6 +87,11 @@ public class CurrencyConverter extends javax.swing.JFrame {
         selectedCurrencyOne.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bitcoin", "Ethereum", "Litecoin", "Dogecoin", "Cardano", "Solana", "Monero", "Polkadot", "Ripple", "Binancecoin", "USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "NOK", "MXN" }));
         selectedCurrencyOne.setToolTipText("");
         selectedCurrencyOne.setName("eee"); // NOI18N
+        selectedCurrencyOne.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectedCurrencyOneActionPerformed(evt);
+            }
+        });
 
         swapButton.setText("↑↓");
         swapButton.addActionListener(new java.awt.event.ActionListener() {
@@ -96,6 +102,11 @@ public class CurrencyConverter extends javax.swing.JFrame {
 
         selectedCurrencyTwo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bitcoin", "Ethereum", "Litecoin", "Dogecoin", "Cardano", "Solana", "Monero", "Polkadot", "Ripple", "Binancecoin", "USD", "EUR", "JPY", "GBP", "AUD", "CAD", "CHF", "CNY", "NOK", "MXN" }));
         selectedCurrencyTwo.setToolTipText("");
+        selectedCurrencyTwo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectedCurrencyTwoActionPerformed(evt);
+            }
+        });
 
         fromLabel.setText("From:");
 
@@ -192,11 +203,11 @@ public class CurrencyConverter extends javax.swing.JFrame {
      * @param evt Reset button pressed
      */
     private void resetButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetButtonActionPerformed
-        // TODO add your handling code here:
         selectedCurrencyOne.setSelectedItem("Bitcoin");
         selectedCurrencyTwo.setSelectedItem("Bitcoin");
         currencyAmount.setText("");
         currencyResult.setText("");
+        resetButton.setEnabled(false); // Disable the reset button after it is pressed 
     }//GEN-LAST:event_resetButtonActionPerformed
     
     /**
@@ -231,10 +242,35 @@ public class CurrencyConverter extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
+    /*
+    * Enables the reset button when changes are made
+    */
+    private void selectedCurrencyOneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedCurrencyOneActionPerformed
+        if(selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin") && currencyAmount.getText().equals(""))  
+            resetButton.setEnabled(false); // If the reset conditions are met, disable the button
+        else
+            resetButton.setEnabled(true); // Otherwise, enable it
+    }//GEN-LAST:event_selectedCurrencyOneActionPerformed
+    
+    /*
+    * Enables the reset button when changes are made
+    */
+    private void selectedCurrencyTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedCurrencyTwoActionPerformed
+        if(selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin") && currencyAmount.getText().equals(""))  
+            resetButton.setEnabled(false); // If the reset conditions are met, disable the button
+        else
+            resetButton.setEnabled(true); // Otherwise, enable it
+    }//GEN-LAST:event_selectedCurrencyTwoActionPerformed
+
     /** 
      *  Disables the swap and convert button on incorrect input, and changes the text to red. Enables again on correct input.
      */
     private void onCurrencyAmountTextChanged() {
+        if (currencyAmount.getText().equals("") && selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin"))  {
+            resetButton.setEnabled(false); // Disable the button if the amount field is empty and both currencies are already reset
+        }
+        else
+            resetButton.setEnabled(true); // Otherwise, enable the box
         String amountText = currencyAmount.getText();  // Get the amount text
         // Check if the text is empty or not a valid double
         boolean isValid = !amountText.isEmpty(); // Create a boolean to track the state of the text
