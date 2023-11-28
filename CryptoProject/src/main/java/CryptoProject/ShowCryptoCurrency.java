@@ -11,6 +11,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;                                           // CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER; // CODE FROM: https://stackoverflow.com/questions/1727840/disable-horizontal-scroll-in-jscrollpane
 import javax.swing.SwingWorker;                                           // CODE FROM: https://docs.oracle.com/javase/8/docs/api/javax/swing/SwingWorker.html
 import javax.swing.Timer;                                                 // CODE FROM: https://docs.oracle.com/javase%2F7%2Fdocs%2Fapi%2F%2F/javax/swing/Timer.html
@@ -59,18 +60,22 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         };
         dateLabel.setText("Updated: " + data.date.toString());             // Gets and prints the last updated date
         String currencySymbol = getCurrencySymbol(currency);                             // Gets the currency symbol to use to print the values
-        for (int i = 0; i < coins.length; i++) {                                         // Loop through all 10 coins in the list to update the values
-            DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");           // Format the decimal place and commas - CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
-            decimalFormat.setMinimumFractionDigits(2);                            // Ensure two decimal places are shown - CODE FROM: https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html
-            priceLabels[i].setText(currencySymbol + decimalFormat.format(data.getPrice(coins[i], currency)));   // Update the current price label
-            changeLabels[i].setText(data.get24HourChange(coins[i], currency + "%"));                           // Update the current change label
-            mcLabels[i].setText(currencySymbol + data.getMarketCap(coins[i], currency));                           // Update the current market cap label
-            volumeLabels[i].setText(currencySymbol + data.getVolume(coins[i], currency));                          // Update the current volume label
+        try { 
+            for (int i = 0; i < coins.length; i++) {                                         // Loop through all 10 coins in the list to update the values
+                DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");           // Format the decimal place and commas - CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
+                decimalFormat.setMinimumFractionDigits(2);                            // Ensure two decimal places are shown - CODE FROM: https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html
+                priceLabels[i].setText(currencySymbol + decimalFormat.format(data.getPrice(coins[i], currency)));   // Update the current price label
+                changeLabels[i].setText(data.get24HourChange(coins[i], currency + "%"));                           // Update the current change label
+                mcLabels[i].setText(currencySymbol + data.getMarketCap(coins[i], currency));                           // Update the current market cap label
+                volumeLabels[i].setText(currencySymbol + data.getVolume(coins[i], currency));                          // Update the current volume label
 
-            if (parsePercentageValue(changeLabels[i].getText()) >= 0)                                              // Set the color of the change percentage to red if negative, green if positive
-                changeLabels[i].setForeground(Color.GREEN);
-            else 
-                changeLabels[i].setForeground(Color.RED);
+                if (parsePercentageValue(changeLabels[i].getText()) >= 0)                                              // Set the color of the change percentage to red if negative, green if positive
+                    changeLabels[i].setForeground(Color.GREEN);
+                else 
+                    changeLabels[i].setForeground(Color.RED);
+            }
+        } catch (IllegalArgumentException e){
+            JOptionPane.showMessageDialog(null, "An error occured while retrieving crypto prices. \nPlease try again later.", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
 
