@@ -5,6 +5,8 @@
 package CryptoProject;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import javax.swing.JLabel;
 import javax.swing.SwingWorker;
@@ -35,6 +37,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     private void initComponents() {
 
         Title = new javax.swing.JLabel();
+        autoUpdateCB = new javax.swing.JCheckBox();
         valuesScrollPane = new javax.swing.JScrollPane();
         valuesPanel = new javax.swing.JPanel();
         usdPanel = new javax.swing.JPanel();
@@ -108,6 +111,13 @@ public class ShowCurrency extends javax.swing.JFrame {
         Title.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Title.setText("Live Currency Prices");
+
+        autoUpdateCB.setText("AutoUpdate");
+        autoUpdateCB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                autoUpdateCBActionPerformed(evt);
+            }
+        });
 
         valuesScrollPane.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -665,28 +675,28 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addContainerGap(45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(updateButton)
-                    .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(autoUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(19, 19, 19)
-                .addComponent(dateLabel)
+                    .addComponent(backButton)
+                    .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dateLabel)
+                    .addComponent(autoUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(selectedCurrency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(updateButton))
                 .addGap(1, 1, 1)
                 .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -738,6 +748,42 @@ public class ShowCurrency extends javax.swing.JFrame {
         };
         buttonPressed.execute();  
     }//GEN-LAST:event_updateButtonActionPerformed
+
+    private void autoUpdateCBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_autoUpdateCBActionPerformed
+        Timer autoUpdateTimer = new Timer(60000, new ActionListener() { // Start a 60 second timer to update the values
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (autoUpdateCB.isSelected()) {
+                    data.updateCurrencyData("latest");                                          // Update the prices in the data class when the button is clicked
+                    data.updateCurrencyData("historical"); 
+                    updateCurrencyData(selectedCurrency.getSelectedItem().toString());  // Update the values
+                }
+            }
+        });
+
+        if (autoUpdateCB.isSelected()) {          // When selected
+            updateButton.setEnabled(false);     // Disable the updateButton
+            autoUpdateTimer.setRepeats(true); // Repeat the timer every 10 seconds
+            autoUpdateTimer.start();              // Start the timer
+        } else { // When deselected
+            updateButton.setEnabled(true); // Enable the updateButton
+            autoUpdateTimer.stop(); // Disable the timer if running
+            autoUpdateCB.setEnabled(false); // Disable the checkbox and update button for 5 seconds
+            updateButton.setEnabled(false);
+
+            // After 5 seconds, re-enable the checkbox
+            Timer cooldownTimer = new Timer(5000, new ActionListener() { // After 5 seconds, enable them again
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    autoUpdateCB.setEnabled(true);
+                    updateButton.setEnabled(true);
+                }
+            });
+            cooldownTimer.setRepeats(false);
+            cooldownTimer.start();
+        }
+
+    }//GEN-LAST:event_autoUpdateCBActionPerformed
 
     /**
      * Updates the currencies prices and 24 hour change as a value and as a percentage
@@ -855,6 +901,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     private javax.swing.JLabel audLabel;
     private javax.swing.JPanel audPanel;
     private javax.swing.JLabel audPrice;
+    private javax.swing.JCheckBox autoUpdateCB;
     private javax.swing.JButton backButton;
     private javax.swing.JLabel cadChangePercent;
     private javax.swing.JLabel cadChangeValue;
