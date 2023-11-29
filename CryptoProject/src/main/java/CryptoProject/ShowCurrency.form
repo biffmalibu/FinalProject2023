@@ -601,6 +601,11 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="cadImage">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/canada.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cadLabel">
                   <Properties>
@@ -676,6 +681,11 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="chfImage">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/switzerland.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="chfLabel">
                   <Properties>
@@ -751,6 +761,11 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="cnyImage">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/china.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="cnyLabel">
                   <Properties>
@@ -826,6 +841,11 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="nokImage">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/norway.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="nokLabel">
                   <Properties>
@@ -901,6 +921,11 @@
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="mxnImage">
+                  <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/Images/mexico.png"/>
+                    </Property>
+                  </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="mxnLabel">
                   <Properties>
