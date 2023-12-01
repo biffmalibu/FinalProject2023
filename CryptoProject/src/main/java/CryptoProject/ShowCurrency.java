@@ -890,6 +890,7 @@ public class ShowCurrency extends javax.swing.JFrame {
      * @param base The selected currency to convert to
      */
     private void updateCurrencyData(String base) {
+        setTitle("Currency prices in " + base);
         String symbol = getCurrencySymbol(base); // Get the currency symbol to use
         String[] currencies = { // Array of strings for the currency names
             "USD", "EUR", "JPY", "GBP", "AUD",
@@ -987,7 +988,6 @@ public class ShowCurrency extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                System.out.println("yuh");
                 new ShowCurrency().setVisible(true);
             }
         });

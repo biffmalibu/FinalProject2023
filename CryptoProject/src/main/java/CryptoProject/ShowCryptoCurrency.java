@@ -38,6 +38,7 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
      * @param currency Current selected fiat currency
      */
     private void updateCoinData(String currency) { 
+        setTitle("Cryptocurrency prices in " + currency.toUpperCase());
         String[] coins = {                                                               // Array of strings to hold all of the coins
             "bitcoin", "ethereum", "litecoin", "dogecoin", "cardano",
             "solana", "monero", "polkadot", "ripple", "binancecoin"

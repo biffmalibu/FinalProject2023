@@ -67,6 +67,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         backButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Currency Converter");
 
         title.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
