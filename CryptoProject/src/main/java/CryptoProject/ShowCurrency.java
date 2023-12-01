@@ -124,6 +124,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         valuesPanel.setBackground(new java.awt.Color(102, 102, 102));
 
         usdPanel.setBackground(new java.awt.Color(153, 153, 153));
+        usdPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                usdPanelMouseClicked(evt);
+            }
+        });
 
         usdImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/usa.png"))); // NOI18N
 
@@ -170,6 +175,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         eurPanel.setBackground(new java.awt.Color(153, 153, 153));
+        eurPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eurPanelMouseClicked(evt);
+            }
+        });
 
         eurImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/europe.png"))); // NOI18N
 
@@ -215,6 +225,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         jpyPanel.setBackground(new java.awt.Color(153, 153, 153));
+        jpyPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jpyPanelMouseClicked(evt);
+            }
+        });
 
         jpyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/japan.png"))); // NOI18N
 
@@ -261,6 +276,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         gbpPanel.setBackground(new java.awt.Color(153, 153, 153));
+        gbpPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                gbpPanelMouseClicked(evt);
+            }
+        });
 
         gbpImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/united-kingdom.png"))); // NOI18N
 
@@ -307,6 +327,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         audPanel.setBackground(new java.awt.Color(153, 153, 153));
+        audPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                audPanelMouseClicked(evt);
+            }
+        });
 
         audImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/australia.png"))); // NOI18N
 
@@ -353,6 +378,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         cadPanel.setBackground(new java.awt.Color(153, 153, 153));
+        cadPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cadPanelMouseClicked(evt);
+            }
+        });
 
         cadImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/canada.png"))); // NOI18N
 
@@ -399,6 +429,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         chfPanel.setBackground(new java.awt.Color(153, 153, 153));
+        chfPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                chfPanelMouseClicked(evt);
+            }
+        });
 
         chfImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/switzerland.png"))); // NOI18N
 
@@ -445,6 +480,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         cnyPanel.setBackground(new java.awt.Color(153, 153, 153));
+        cnyPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cnyPanelMouseClicked(evt);
+            }
+        });
 
         cnyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/china.png"))); // NOI18N
 
@@ -491,6 +531,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         nokPanel.setBackground(new java.awt.Color(153, 153, 153));
+        nokPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                nokPanelMouseClicked(evt);
+            }
+        });
 
         nokImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/norway.png"))); // NOI18N
 
@@ -537,6 +582,11 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         mxnPanel.setBackground(new java.awt.Color(153, 153, 153));
+        mxnPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mxnPanelMouseClicked(evt);
+            }
+        });
 
         mxnImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mexico.png"))); // NOI18N
 
@@ -785,6 +835,58 @@ public class ShowCurrency extends javax.swing.JFrame {
 
     }//GEN-LAST:event_autoUpdateCBActionPerformed
 
+    private void usdPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usdPanelMouseClicked
+        System.out.println("calling individual window");
+        createIndividualWindow("USD");
+        System.out.println("called individual window");
+    }//GEN-LAST:event_usdPanelMouseClicked
+
+    private void eurPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eurPanelMouseClicked
+        createIndividualWindow("EUR");
+    }//GEN-LAST:event_eurPanelMouseClicked
+
+    private void jpyPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpyPanelMouseClicked
+        createIndividualWindow("JPY");// TODO add your handling code here:
+    }//GEN-LAST:event_jpyPanelMouseClicked
+
+    private void gbpPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gbpPanelMouseClicked
+        createIndividualWindow("GBP");
+    }//GEN-LAST:event_gbpPanelMouseClicked
+
+    private void audPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_audPanelMouseClicked
+        createIndividualWindow("AUD");
+    }//GEN-LAST:event_audPanelMouseClicked
+
+    private void cadPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadPanelMouseClicked
+        createIndividualWindow("CAD");
+    }//GEN-LAST:event_cadPanelMouseClicked
+
+    private void chfPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chfPanelMouseClicked
+        createIndividualWindow("CHF");
+    }//GEN-LAST:event_chfPanelMouseClicked
+
+    private void cnyPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cnyPanelMouseClicked
+        createIndividualWindow("CNY");
+    }//GEN-LAST:event_cnyPanelMouseClicked
+
+    private void nokPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nokPanelMouseClicked
+        createIndividualWindow("NOK");
+    }//GEN-LAST:event_nokPanelMouseClicked
+
+    private void mxnPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mxnPanelMouseClicked
+        createIndividualWindow("MXN");
+    }//GEN-LAST:event_mxnPanelMouseClicked
+
+    private void createIndividualWindow(String fromCurrency) {
+        System.out.println("creating individual window");
+        String toCurrency = selectedCurrency.getSelectedItem().toString();
+        Double currentRate = data.getConversionRate(fromCurrency, toCurrency); // Calcukate the current and historic rates
+        Double historicRate = data.getHistoricRate(fromCurrency, toCurrency);
+        Double dailyChange = currentRate - historicRate;     // Find the difference and also convert the different to a percentage
+        Double percentChange = (dailyChange/historicRate) * 100; 
+        new IndividualCurrencyWindow(fromCurrency, toCurrency, currentRate, historicRate, dailyChange, percentChange).setVisible(true);
+        System.out.println("created individual window");
+    }
     /**
      * Updates the currencies prices and 24 hour change as a value and as a percentage
      * 
@@ -867,7 +969,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+        /*try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -882,13 +984,13 @@ public class ShowCurrency extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ShowCurrency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ShowCurrency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
+        }*/
         //</editor-fold>
-
+       // FlatDarkLaf.setup();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ShowCurrency().setVisible(true);
+                //new ShowCurrency().setVisible(true);
             }
         });
     }
