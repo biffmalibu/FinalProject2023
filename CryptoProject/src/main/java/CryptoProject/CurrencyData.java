@@ -1,7 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+/////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                             //
+//  Author: Bradford Torpey                                                                    //
+//  Purpose: To collect and store live currency information utilizing the Currencybeacon API   //
+//                                                                                             //
+/////////////////////////////////////////////////////////////////////////////////////////////////
 package CryptoProject;
 
 import com.google.gson.JsonElement;
@@ -51,7 +53,8 @@ public class CurrencyData {
             if(endpoint.equals("historical"))                                                                                        // CODE FROM: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
                 date = "&date=" + LocalDate.now().minusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")); // CODE FROM: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
             String apiUrl = "https://api.currencybeacon.com/v1/"+ endpoint + "?api_key=" + apiKey + "&base=" + base + date + "&symbols=" + String.join(",", currencies);
-            System.out.println(apiUrl);
+            //System.out.println(apiUrl);
+            System.out.println("Currency API called");
             URL url = new URL(apiUrl);      // Create a URL object to store the API link
 
             InputStreamReader read = new InputStreamReader(url.openStream()); // Open an input stream to collect data from the API

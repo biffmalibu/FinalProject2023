@@ -1,7 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+///////////////////////////////////////////////////////
+//                                                   //
+//  Author: Bradford Torpey                          //
+//  Purpose: To be the main menu for the project     //
+//                                                   //
+///////////////////////////////////////////////////////
 package CryptoProject;
 
 /**
@@ -92,21 +94,18 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void converterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_converterButtonActionPerformed
-        // TODO add your handling code here:
-        new CurrencyConverter().setVisible(true);
+        new CurrencyConverter().setVisible(true); // Open the CurrencyConverter window
         dispose();
     }//GEN-LAST:event_converterButtonActionPerformed
 
     private void cryptoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cryptoButtonActionPerformed
-        // TODO add your handling code here:
-        new ShowCryptoCurrency().setVisible(true);
+        new ShowCryptoCurrency().setVisible(true); // Open the ShowCryptoCurrency window
         dispose();
         
     }//GEN-LAST:event_cryptoButtonActionPerformed
 
     private void currencyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currencyButtonActionPerformed
-        // TODO add your handling code here:
-        new ShowCurrency().setVisible(true);
+        new ShowCurrency().setVisible(true); // Open the ShowCurrency window
         dispose();
     }//GEN-LAST:event_currencyButtonActionPerformed
 

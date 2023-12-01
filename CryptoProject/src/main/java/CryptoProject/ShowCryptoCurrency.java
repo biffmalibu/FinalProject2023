@@ -902,7 +902,6 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
      * @param evt Back button pressed
      */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
         new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed

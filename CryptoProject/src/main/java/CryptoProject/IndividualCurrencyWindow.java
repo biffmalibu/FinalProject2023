@@ -1,7 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//  Author: Bradford Torpey                                                          //
+//  Purpose: To display live currency information utilizing the Currencybeacon API   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
 package CryptoProject;
 
 import java.awt.Color;
@@ -11,7 +13,7 @@ import java.text.DecimalFormat;
  *
  * @author bradf
  */
-public class IndividualCurrencyWindow extends javax.swing.JFrame { /*147.1293573 https://api.currencybeacon.com/v1/historical?api_key=fVYGGBrh0nIwXt5UvnPMEqNDQPGkBrHn&base=usd&date=2023-11-29&symbols=jpy*/
+public class IndividualCurrencyWindow extends javax.swing.JFrame { 
     private String fromCurrency;
     private String toCurrency;
     private double currentRate;
@@ -21,14 +23,14 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame { /*147.1293573
  
     public IndividualCurrencyWindow(String fromCurrency, String toCurrency, double currentRate, double historicRate, double dailyChange, double percentChange) {
         initComponents();
-        setTitle(fromCurrency + "/" + toCurrency + " Information");
+        setTitle(fromCurrency + "/" + toCurrency + " Information"); // Set the title of the window
         this.fromCurrency = fromCurrency; // Initialize the fields
         this.toCurrency = toCurrency;
         this.currentRate = currentRate;
         this.historicRate = historicRate;
         this.dailyChange = dailyChange;
         this.percentChange = percentChange;
-        populateCurrencyInfo();
+        populateCurrencyInfo(); // Set the currency info
         
     }
     

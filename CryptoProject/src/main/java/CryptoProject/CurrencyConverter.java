@@ -1,7 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+///////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                       //
+//  Author: Bradford Torpey                                                              //
+//  Purpose: To convert between currencies and Cryptocurrencies using a functional GUI   //
+//                                                                                       //
+///////////////////////////////////////////////////////////////////////////////////////////
 package CryptoProject;
 
 import java.awt.Color;
@@ -215,7 +217,6 @@ public class CurrencyConverter extends javax.swing.JFrame {
      * @param evt Convert button pressed
      */
     private void convertButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_convertButtonActionPerformed
-        // TODO add your handling code here:
         convert(selectedCurrencyOne.getSelectedItem().toString().toLowerCase(), selectedCurrencyTwo.getSelectedItem().toString().toLowerCase(), Double.parseDouble(currencyAmount.getText()));
     }//GEN-LAST:event_convertButtonActionPerformed
 
@@ -224,7 +225,6 @@ public class CurrencyConverter extends javax.swing.JFrame {
      * @param evt Swap button pressed
      */
     private void swapButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_swapButtonActionPerformed
-        // TODO add your handling code here:
         String selectedItem1 = selectedCurrencyOne.getSelectedItem().toString(); // Store the original states
         String selectedItem2 = selectedCurrencyTwo.getSelectedItem().toString();
         selectedCurrencyOne.setSelectedItem(selectedItem2); // Swap them, then do the conversion
@@ -237,7 +237,6 @@ public class CurrencyConverter extends javax.swing.JFrame {
      * @param evt Back button pressed
      */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here
         new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed

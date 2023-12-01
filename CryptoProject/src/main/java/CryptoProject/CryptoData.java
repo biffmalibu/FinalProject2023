@@ -50,7 +50,8 @@ public class CryptoData {
         try {
             String apiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=" +  // Build the URL with the currencies and crypto coins
                     String.join(",", coins) + "&vs_currencies=" + String.join(",", currencies) + "&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true&precision=18";
-            System.out.println(apiUrl);
+            //System.out.println(apiUrl);
+            System.out.println("Crypto Api called");
             URL url = new URL(apiUrl);      // Create a URL object to store the API link
 
             InputStreamReader read = new InputStreamReader(url.openStream()); // Open an input stream to collect data from the API

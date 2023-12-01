@@ -1,7 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+///////////////////////////////////////////////////////////////////////////////////////
+//                                                                                   //
+//  Author: Bradford Torpey                                                          //
+//  Purpose: To display live currency information utilizing the Currencybeacon API   //
+//                                                                                   //
+///////////////////////////////////////////////////////////////////////////////////////
 package CryptoProject;
 
 import java.awt.Color;
@@ -767,7 +769,6 @@ public class ShowCurrency extends javax.swing.JFrame {
      * @param evt Back button pressed
      */
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
-        // TODO add your handling code here:
         new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
@@ -836,9 +837,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     }//GEN-LAST:event_autoUpdateCBActionPerformed
 
     private void usdPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usdPanelMouseClicked
-        System.out.println("calling individual window");
         createIndividualWindow("USD");
-        System.out.println("called individual window");
     }//GEN-LAST:event_usdPanelMouseClicked
 
     private void eurPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eurPanelMouseClicked
@@ -846,7 +845,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     }//GEN-LAST:event_eurPanelMouseClicked
 
     private void jpyPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpyPanelMouseClicked
-        createIndividualWindow("JPY");// TODO add your handling code here:
+        createIndividualWindow("JPY");
     }//GEN-LAST:event_jpyPanelMouseClicked
 
     private void gbpPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gbpPanelMouseClicked
@@ -878,14 +877,12 @@ public class ShowCurrency extends javax.swing.JFrame {
     }//GEN-LAST:event_mxnPanelMouseClicked
 
     private void createIndividualWindow(String fromCurrency) {
-        System.out.println("creating individual window");
         String toCurrency = selectedCurrency.getSelectedItem().toString();
-        Double currentRate = data.getConversionRate(fromCurrency, toCurrency); // Calcukate the current and historic rates
+        Double currentRate = data.getConversionRate(fromCurrency, toCurrency); // Calculate the current and historic rates
         Double historicRate = data.getHistoricRate(fromCurrency, toCurrency);
         Double dailyChange = currentRate - historicRate;     // Find the difference and also convert the different to a percentage
         Double percentChange = (dailyChange/historicRate) * 100; 
         new IndividualCurrencyWindow(fromCurrency, toCurrency, currentRate, historicRate, dailyChange, percentChange).setVisible(true);
-        System.out.println("created individual window");
     }
     /**
      * Updates the currencies prices and 24 hour change as a value and as a percentage
@@ -969,7 +966,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        /*try {
+        try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -984,13 +981,14 @@ public class ShowCurrency extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ShowCurrency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ShowCurrency.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }*/
+        }
         //</editor-fold>
-       // FlatDarkLaf.setup();
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new ShowCurrency().setVisible(true);
+                System.out.println("yuh");
+                new ShowCurrency().setVisible(true);
             }
         });
     }
