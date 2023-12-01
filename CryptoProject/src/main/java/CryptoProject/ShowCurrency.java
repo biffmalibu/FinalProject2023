@@ -922,12 +922,18 @@ public class ShowCurrency extends javax.swing.JFrame {
             else
                 percentLabels[i].setForeground(Color.BLACK);
             
-            if (dailyChange > 0) // Add a "+" if positive 
+            if (dailyChange > 0) {// Add a "+" if positive 
                 changeLabels[i].setText("+" + String.format("%.8f", dailyChange));  // Print the difference with 12 decimal places
-            else if (dailyChange < 0) 
+                changeLabels[i].setForeground(Color.GREEN);
+            }
+            else if (dailyChange < 0) {
                 changeLabels[i].setText(String.format("%.8f", dailyChange)); // Print the difference with 12 decimal places
-            else
+                changeLabels[i].setForeground(Color.RED);
+            }
+            else {
                 changeLabels[i].setText(dailyChange.toString()); // Print the difference as 0.0 if only 0.
+                changeLabels[i].setForeground(Color.BLACK);
+            }
             
         }
     }
