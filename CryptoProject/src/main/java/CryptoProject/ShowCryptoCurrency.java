@@ -59,9 +59,10 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
             bitcoinVolume, ethereumVolume, litecoinVolume, dogecoinVolume, cardanoVolume,
             SolanaVolume, MoneroVolume, PolkadotVolume, RippleVolume, BinancecoinVolume
         };
-        dateLabel.setText("Updated: " + data.date.toString());             // Gets and prints the last updated date
+        
         String currencySymbol = getCurrencySymbol(currency);                             // Gets the currency symbol to use to print the values
         try { 
+            dateLabel.setText("Updated: " + data.date.toString());             // Gets and prints the last updated date
             for (int i = 0; i < coins.length; i++) {                                         // Loop through all 10 coins in the list to update the values
                 DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");           // Format the decimal place and commas - CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
                 decimalFormat.setMinimumFractionDigits(2);                            // Ensure two decimal places are shown - CODE FROM: https://docs.oracle.com/javase/8/docs/api/java/text/DecimalFormat.html
@@ -76,6 +77,8 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
                     changeLabels[i].setForeground(Color.RED);
             }
         } catch (IllegalArgumentException e){
+            JOptionPane.showMessageDialog(null, "An error occured while retrieving crypto prices. \nPlease try again later.", "ERROR", JOptionPane.ERROR_MESSAGE);
+        } catch (NullPointerException e){
             JOptionPane.showMessageDialog(null, "An error occured while retrieving crypto prices. \nPlease try again later.", "ERROR", JOptionPane.ERROR_MESSAGE);
         }
     }
