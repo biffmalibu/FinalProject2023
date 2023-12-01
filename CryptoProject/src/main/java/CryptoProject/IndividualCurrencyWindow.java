@@ -49,11 +49,11 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame { /*147.1293573
         else
             percentChangeLabel.setForeground(Color.BLACK);
         if (dailyChange > 0) { // Add a "+" if positive 
-            dailyChangeLabel.setText("+" + String.format("%.12f", dailyChange));  // Print the difference with 12 decimal places
+            dailyChangeLabel.setText("+" + String.format("%.8f", dailyChange));  // Print the difference with 12 decimal places
             dailyChangeLabel.setForeground(Color.GREEN);
         }
         else if (dailyChange < 0) {
-            dailyChangeLabel.setText(String.format("%.12f", dailyChange)); // Print the difference with 12 decimal places
+            dailyChangeLabel.setText(String.format("%.8f", dailyChange)); // Print the difference with 12 decimal places
             dailyChangeLabel.setForeground(Color.RED);
         }
         else {
