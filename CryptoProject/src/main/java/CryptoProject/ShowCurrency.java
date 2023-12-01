@@ -106,6 +106,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         updateButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
         dateLabel = new javax.swing.JLabel();
+        labelsLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -705,6 +706,8 @@ public class ShowCurrency extends javax.swing.JFrame {
         dateLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         dateLabel.setText("Mon Jan 1st 12:00:00");
 
+        labelsLabel.setText("                     Currency                                           24h +/-                                       24h  %                Price");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -726,7 +729,10 @@ public class ShowCurrency extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(updateButton)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(updateButton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(labelsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 569, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 725, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(autoUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(45, 45, 45))
@@ -743,12 +749,15 @@ public class ShowCurrency extends javax.swing.JFrame {
                     .addComponent(dateLabel)
                     .addComponent(autoUpdateCB, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(selectedCurrency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(updateButton))
-                .addGap(1, 1, 1)
-                .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(selectedCurrency, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(updateButton))
+                        .addGap(1, 1, 1))
+                    .addComponent(labelsLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addComponent(valuesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
+                .addGap(45, 45, 45))
         );
 
         pack();
@@ -1046,6 +1055,7 @@ public class ShowCurrency extends javax.swing.JFrame {
     private javax.swing.JLabel jpyLabel;
     private javax.swing.JPanel jpyPanel;
     private javax.swing.JLabel jpyPrice;
+    private javax.swing.JLabel labelsLabel;
     private javax.swing.JLabel mxnChangePercent;
     private javax.swing.JLabel mxnChangeValue;
     private javax.swing.JLabel mxnImage;
