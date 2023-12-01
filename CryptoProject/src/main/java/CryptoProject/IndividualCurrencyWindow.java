@@ -42,7 +42,7 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame {
         DecimalFormat decimalFormat = new DecimalFormat("0.0###"); // Format the value with two decimal places and commas
         currenciesLabel.setText(fromCurrency + "/" + toCurrency);
         currentRateLabel.setText(symbol + String.valueOf(decimalFormat.format(currentRate)));
-        percentChangeLabel.setText(String.format("%.4f", percentChange) + "%");
+        percentChangeLabel.setText("(" + String.format("%.4f", percentChange) + "%)");
         historicPrice.setText("Yesterdays Price: " + symbol + String.valueOf(decimalFormat.format(historicRate)));
         if (percentChange > 0)
                 percentChangeLabel.setForeground(Color.GREEN); // Adjust the color of the percentage if it is negative or positve, or 0.
