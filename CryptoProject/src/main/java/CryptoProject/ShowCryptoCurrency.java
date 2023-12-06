@@ -184,6 +184,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         valuesPanel.setBackground(new java.awt.Color(102, 102, 102));
 
         bitcoinPanel.setBackground(new java.awt.Color(153, 153, 153));
+        bitcoinPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bitcoinPanelMouseClicked(evt);
+            }
+        });
 
         bitcoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         bitcoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/bitcoin.png"))); // NOI18N
@@ -235,6 +240,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         ethereumPanel.setBackground(new java.awt.Color(153, 153, 153));
+        ethereumPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ethereumPanelMouseClicked(evt);
+            }
+        });
 
         ethereumImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ethereumImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ethereum.png"))); // NOI18N
@@ -286,6 +296,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         litecoinPanel.setBackground(new java.awt.Color(153, 153, 153));
+        litecoinPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                litecoinPanelMouseClicked(evt);
+            }
+        });
 
         litecoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         litecoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/litecoin.png"))); // NOI18N
@@ -337,6 +352,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         dogecoinPanel.setBackground(new java.awt.Color(153, 153, 153));
+        dogecoinPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dogecoinPanelMouseClicked(evt);
+            }
+        });
 
         dogecoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dogecoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/dogecoin.png"))); // NOI18N
@@ -388,6 +408,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         cardanoPanel.setBackground(new java.awt.Color(153, 153, 153));
+        cardanoPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cardanoPanelMouseClicked(evt);
+            }
+        });
 
         cardanoImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         cardanoImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cardano.png"))); // NOI18N
@@ -439,6 +464,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         SolanaPanel.setBackground(new java.awt.Color(153, 153, 153));
+        SolanaPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SolanaPanelMouseClicked(evt);
+            }
+        });
 
         SolanaImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         SolanaImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/solana.png"))); // NOI18N
@@ -490,6 +520,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         MoneroPanel.setBackground(new java.awt.Color(153, 153, 153));
+        MoneroPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MoneroPanelMouseClicked(evt);
+            }
+        });
 
         MoneroImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         MoneroImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/monero.png"))); // NOI18N
@@ -541,6 +576,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         PolkadotPanel.setBackground(new java.awt.Color(153, 153, 153));
+        PolkadotPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PolkadotPanelMouseClicked(evt);
+            }
+        });
 
         PolkadotImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PolkadotImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/polkadot.png"))); // NOI18N
@@ -592,9 +632,14 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         RipplePanel.setBackground(new java.awt.Color(153, 153, 153));
+        RipplePanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RipplePanelMouseClicked(evt);
+            }
+        });
 
         RippleImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        RippleImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/xrp.png"))); // NOI18N
+        RippleImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ripple.png"))); // NOI18N
 
         RippleLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         RippleLabel.setText("Ripple");
@@ -643,6 +688,11 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         );
 
         BinancecoinPanel.setBackground(new java.awt.Color(153, 153, 153));
+        BinancecoinPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BinancecoinPanelMouseClicked(evt);
+            }
+        });
 
         BinancecoinImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         BinancecoinImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/binancecoin.png"))); // NOI18N
@@ -909,6 +959,60 @@ public class ShowCryptoCurrency extends javax.swing.JFrame {
         new MainMenu().setVisible(true);
         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
+
+    private void bitcoinPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bitcoinPanelMouseClicked
+        createIndividualWindow("bitcoin"); // Create a new window when the panel is clicked
+    }//GEN-LAST:event_bitcoinPanelMouseClicked
+
+    private void ethereumPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ethereumPanelMouseClicked
+        createIndividualWindow("ethereum");
+    }//GEN-LAST:event_ethereumPanelMouseClicked
+
+    private void litecoinPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_litecoinPanelMouseClicked
+        createIndividualWindow("litecoin");
+    }//GEN-LAST:event_litecoinPanelMouseClicked
+
+    private void dogecoinPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dogecoinPanelMouseClicked
+        createIndividualWindow("dogecoin");
+    }//GEN-LAST:event_dogecoinPanelMouseClicked
+
+    private void cardanoPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardanoPanelMouseClicked
+        createIndividualWindow("cardano");
+    }//GEN-LAST:event_cardanoPanelMouseClicked
+
+    private void SolanaPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SolanaPanelMouseClicked
+        createIndividualWindow("solana");
+    }//GEN-LAST:event_SolanaPanelMouseClicked
+
+    private void MoneroPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoneroPanelMouseClicked
+        createIndividualWindow("monero");
+    }//GEN-LAST:event_MoneroPanelMouseClicked
+
+    private void PolkadotPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PolkadotPanelMouseClicked
+        createIndividualWindow("polkadot");
+    }//GEN-LAST:event_PolkadotPanelMouseClicked
+
+    private void RipplePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RipplePanelMouseClicked
+        createIndividualWindow("ripple");
+    }//GEN-LAST:event_RipplePanelMouseClicked
+
+    private void BinancecoinPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BinancecoinPanelMouseClicked
+        createIndividualWindow("binancecoin");
+    }//GEN-LAST:event_BinancecoinPanelMouseClicked
+    
+    /**
+     * Creates an individual cryptocurrency window
+     * @param crypto The selected cryptocurrency
+     */
+    private void createIndividualWindow(String crypto) {
+        String currency = selectedCurrency.getSelectedItem().toString().toLowerCase(); // Calculate info for the window
+        double price = data.getPrice(crypto, currency);
+        String marketCap = data.getMarketCap(crypto, currency);
+        String dailyVolume = data.getVolume(crypto, currency);
+        String percentChange = data.get24HourChange(crypto, currency);
+        crypto = crypto.substring(0, 1).toUpperCase() + crypto.substring(1);
+        new IndividualCryptoWindow(crypto, currency, price, marketCap, dailyVolume, percentChange).setVisible(true); // Create the window
+    }
     
     /**
      * Helper method to remove the percent symbol and convert to a double.
