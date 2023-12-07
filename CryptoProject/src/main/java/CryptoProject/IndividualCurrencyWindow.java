@@ -22,6 +22,7 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame {
     private double percentChange;
  
     public IndividualCurrencyWindow(String fromCurrency, String toCurrency, double currentRate, double historicRate, double dailyChange, double percentChange) {
+        getContentPane().setBackground(new Color(153, 153, 153)); // Set the color of the frame for better viewing
         initComponents();
         setTitle(fromCurrency + "/" + toCurrency + " Information"); // Set the title of the window
         this.fromCurrency = fromCurrency; // Initialize the fields

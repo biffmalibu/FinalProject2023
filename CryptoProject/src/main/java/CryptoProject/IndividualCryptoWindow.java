@@ -25,6 +25,7 @@ public class IndividualCryptoWindow extends javax.swing.JFrame {
 
  
     public IndividualCryptoWindow(String crypto, String currency, double currentPrice, String marketCap, String dailyVolume, String percentChange) {
+        getContentPane().setBackground(new Color(153, 153, 153)); // Set the color of the frame for better viewing
         initComponents();
         setTitle(crypto + " Information in " + currency.toUpperCase()); // Set the title of the window
         this.crypto = crypto; // Initialize the fields
