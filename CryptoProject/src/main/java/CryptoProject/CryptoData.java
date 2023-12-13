@@ -9,6 +9,8 @@ package CryptoProject;
 import com.google.gson.JsonObject;     // GSON/JSON imports
 import com.google.gson.JsonParser;
 import com.google.gson.JsonElement;
+import java.io.FileWriter; // Unused import for debugging 
+import java.time.LocalTime; // Unused import for debugging 
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -51,7 +53,7 @@ public class CryptoData {
             String apiUrl = "https://api.coingecko.com/api/v3/simple/price?ids=" +  // Build the URL with the currencies and crypto coins
                     String.join(",", coins) + "&vs_currencies=" + String.join(",", currencies) + "&include_market_cap=true&include_24hr_vol=true&include_24hr_change=true&include_last_updated_at=true&precision=18";
             //System.out.println(apiUrl);
-            System.out.println("Crypto Api called");
+            //System.out.println("Crypto Api called");
             URL url = new URL(apiUrl);      // Create a URL object to store the API link
 
             InputStreamReader read = new InputStreamReader(url.openStream()); // Open an input stream to collect data from the API
@@ -64,6 +66,11 @@ public class CryptoData {
                 //System.out.println("Incorrect API values were retrieved... Last: " + lastUpdatedValue + " " + new Date(Long.parseLong(String.valueOf(lastUpdatedValue)) * 1000) + " Received: " + curLastUpdated + " " + new Date(Long.parseLong(String.valueOf(curLastUpdated)) * 1000));
                 return;
             } 
+            /*else if (lastUpdatedValue == curLastUpdated)
+                System.out.println("Same crypto data retrieved..." + " Received: " + curLastUpdated + " " + new Date(Long.parseLong(String.valueOf(curLastUpdated)) * 1000));
+            else
+                System.out.println("New crypto data retreived ..." + " Received: " + curLastUpdated + " " + new Date(Long.parseLong(String.valueOf(curLastUpdated)) * 1000));
+            */ //Coingecko API debugging 
             lastUpdatedValue = curLastUpdated; // Check if the new data is old -- Some strange quirk with the API
             //System.out.println("Current Time: " + lastUpdated + " " + new Date(Long.parseLong(String.valueOf(lastUpdated)) * 1000));
             long epoch = Long.parseLong(lastUpdated);
