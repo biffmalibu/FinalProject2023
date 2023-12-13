@@ -7,6 +7,9 @@
 package CryptoProject;
 
 import java.awt.Color;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat; // CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
@@ -22,6 +25,7 @@ import javax.swing.event.DocumentListener;
 public class CurrencyConverter extends javax.swing.JFrame {
     private CryptoData data; // Create a field for the data class
     private Timer updateTimer; // Timer field for autoupdates
+    private String clipboardValue;
     /**
      * Creates new form CurrencyConverter
      */
@@ -31,6 +35,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         convertButton.setEnabled(false); // Disable the buttons initially
         swapButton.setEnabled(false);
         resetButton.setEnabled(false);
+        copyButton.setEnabled(false);
         currencyAmount.getDocument().addDocumentListener(new DocumentListener() { // Add a document listener to disable or enable the buttons based on input
             @Override                                                             // Dissallow empty, or non-double inputs
             public void insertUpdate(DocumentEvent e) {
@@ -79,6 +84,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         amountLabel = new javax.swing.JLabel();
         currencyResult = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
+        copyButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Currency Converter");
@@ -141,6 +147,13 @@ public class CurrencyConverter extends javax.swing.JFrame {
             }
         });
 
+        copyButton.setText("Copy");
+        copyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                copyButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -175,8 +188,13 @@ public class CurrencyConverter extends javax.swing.JFrame {
                         .addGap(232, 232, 232))))
             .addComponent(currencyResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(backButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(backButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(copyButton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -209,7 +227,9 @@ public class CurrencyConverter extends javax.swing.JFrame {
                     .addComponent(convertButton))
                 .addGap(29, 29, 29)
                 .addComponent(currencyResult)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(copyButton)
+                .addContainerGap(56, Short.MAX_VALUE))
         );
 
         pack();
@@ -224,6 +244,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
         selectedCurrencyTwo.setSelectedItem("Bitcoin");
         currencyAmount.setText("");
         currencyResult.setText("");
+        copyButton.setEnabled(false);
         resetButton.setEnabled(false); // Disable the reset button after it is pressed 
     }//GEN-LAST:event_resetButtonActionPerformed
     
@@ -269,6 +290,16 @@ public class CurrencyConverter extends javax.swing.JFrame {
     private void selectedCurrencyTwoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectedCurrencyTwoActionPerformed
         checkForResetConditionsMet();
     }//GEN-LAST:event_selectedCurrencyTwoActionPerformed
+
+    /**
+     * This method copies the current conversion to the clipboard
+     * @param evt Copy button pressed
+     */
+    private void copyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyButtonActionPerformed
+        StringSelection clipboardValue = new StringSelection(this.clipboardValue); // CODE FROM: https://stackoverflow.com/questions/6710350/copying-text-to-the-clipboard-using-java
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        clipboard.setContents(clipboardValue, null);                       // END
+    }//GEN-LAST:event_copyButtonActionPerformed
 
     /**
      *  This method invokes a swingworker to update the currency values every 30 seconds.
@@ -321,7 +352,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
     private void convert(String fromCurrency, String toCurrency, double amount) {
         DecimalFormat CryptoResultFormat = new DecimalFormat("0.########"); // CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
         DecimalFormat CurrencyResultFormat = new DecimalFormat("0.###");
-        String value;
+        String value = ""; // String to store the converted value
         if(fromCurrency.length() == 3 && toCurrency.length() == 3) {  // Convert Currency -> Currency
             value = String.valueOf( CurrencyResultFormat.format(amount/data.getPrice("bitcoin", fromCurrency.toLowerCase()) * data.getPrice("bitcoin", toCurrency.toLowerCase())));
             currencyResult.setText(amount + " " + fromCurrency.toUpperCase() + " = " + value + " " + toCurrency.toUpperCase());
@@ -338,12 +369,14 @@ public class CurrencyConverter extends javax.swing.JFrame {
             value = String.valueOf(CryptoResultFormat.format(data.getPrice(fromCurrency.toLowerCase(), "usd")/data.getPrice(toCurrency.toLowerCase(), "usd") * amount));
             currencyResult.setText(amount + " " + fromCurrency.substring(0, 1).toUpperCase() + fromCurrency.substring(1) + " = " + value + " " + toCurrency.substring(0, 1).toUpperCase() + toCurrency.substring(1)); //CODE FROM: https://www.javatpoint.com/how-to-capitalize-the-first-letter-of-a-string-in-java
         }
+        clipboardValue = value; // Set the clipboardValue to the current conversion
+        copyButton.setEnabled(true); // Enable the copy button
     }  
     /*
     * Disables the reset button if the converter is already reset. If not, enables the button.
     */
     private void checkForResetConditionsMet() {
-       if(selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin") && currencyAmount.getText().equals(""))
+       if(selectedCurrencyOne.getSelectedItem().equals("Bitcoin") && selectedCurrencyTwo.getSelectedItem().equals("Bitcoin") && currencyAmount.getText().equals("")) 
             resetButton.setEnabled(false); // Disable the button if the amount field is empty and both currencies are already reset
         else
             resetButton.setEnabled(true); // Otherwise, enable the button
@@ -385,6 +418,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
     private javax.swing.JLabel amountLabel;
     private javax.swing.JButton backButton;
     private javax.swing.JButton convertButton;
+    private javax.swing.JButton copyButton;
     private javax.swing.JTextField currencyAmount;
     private javax.swing.JLabel currencyResult;
     private javax.swing.JLabel fromLabel;
