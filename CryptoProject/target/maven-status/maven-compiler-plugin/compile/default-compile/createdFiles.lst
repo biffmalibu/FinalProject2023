@@ -1,5 +1,6 @@
 CryptoProject\ShowCryptoCurrency.class
 CryptoProject\ShowCurrency$9.class
+CryptoProject\CurrencyConverter$9.class
 CryptoProject\ShowCryptoCurrency$7.class
 CryptoProject\ShowCurrency$14.class
 CryptoProject\IndividualCryptoWindow.class
@@ -19,6 +20,7 @@ CryptoProject\CurrencyConverter.class
 CryptoProject\MainMenu.class
 CryptoProject\ShowCryptoCurrency$13.class
 CryptoProject\ShowCurrency$3.class
+CryptoProject\CurrencyConverter$8.class
 CryptoProject\ShowCurrency$17.class
 CryptoProject\CurrencyConverter$5.class
 CryptoProject\ShowCryptoCurrency$3.class

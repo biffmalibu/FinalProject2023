@@ -7,7 +7,11 @@
 package CryptoProject;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.DecimalFormat; // CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
+import javax.swing.SwingWorker;
+import javax.swing.Timer;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
@@ -17,6 +21,7 @@ import javax.swing.event.DocumentListener;
  */
 public class CurrencyConverter extends javax.swing.JFrame {
     private CryptoData data; // Create a field for the data class
+    private Timer updateTimer; // Timer field for autoupdates
     /**
      * Creates new form CurrencyConverter
      */
@@ -42,6 +47,15 @@ public class CurrencyConverter extends javax.swing.JFrame {
                 onCurrencyAmountTextChanged();
             }
         });
+        
+        int updateInterval = 30000; // 30 second timer for autoupdating the conversion values
+        updateTimer = new Timer(updateInterval, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                runPricesSwingworker(); // Run the swingworker to update the values
+            }
+        });
+        updateTimer.start(); // Start the timer
     }
 
     /**
@@ -256,6 +270,25 @@ public class CurrencyConverter extends javax.swing.JFrame {
         checkForResetConditionsMet();
     }//GEN-LAST:event_selectedCurrencyTwoActionPerformed
 
+    /**
+     *  This method invokes a swingworker to update the currency values every 30 seconds.
+     */
+    private void runPricesSwingworker() {
+        SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+            @Override
+            protected Void doInBackground() throws Exception {
+                data.updatePrices(); // Update the prices
+                return null;
+            }
+            @Override
+            protected void done() { // Convert the values automatically
+                if(!currencyAmount.getText().equals("")) {
+                    convert(selectedCurrencyOne.getSelectedItem().toString().toLowerCase(), selectedCurrencyTwo.getSelectedItem().toString().toLowerCase(), Double.parseDouble(currencyAmount.getText()));
+                }
+            }
+        };
+        worker.execute ();
+    }
     /** 
      *  Disables the swap and convert button on incorrect input, and changes the text to red. Enables again on correct input.
      */
