@@ -52,7 +52,9 @@ public class CurrencyConverter extends javax.swing.JFrame {
                 onCurrencyAmountTextChanged();
             }
         });
+        System.out.println("im running");
         startUpdateTimer();
+        
     }
 
     /**
