@@ -52,15 +52,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
                 onCurrencyAmountTextChanged();
             }
         });
-        
-        int updateInterval = 30000; // 30 second timer for autoupdating the conversion values
-        updateTimer = new Timer(updateInterval, new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                runPricesSwingworker(); // Run the swingworker to update the values
-            }
-        });
-        updateTimer.start(); // Start the timer
+        startUpdateTimer();
     }
 
     /**
@@ -300,7 +292,22 @@ public class CurrencyConverter extends javax.swing.JFrame {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         clipboard.setContents(clipboardValue, null);                       // END
     }//GEN-LAST:event_copyButtonActionPerformed
-
+    /**
+     * This method starts an autoupdate timer to update the values
+     */
+    private void startUpdateTimer() {
+        if (updateTimer != null) {
+            updateTimer.stop(); // Stop the existing timer
+        }
+        int updateInterval = 30000; // 30 second timer for autoupdating the conversion values
+        updateTimer = new Timer(updateInterval, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                runPricesSwingworker(); // Run the swingworker to update the values
+            }
+        });
+        updateTimer.start(); // Start the timer
+    }
     /**
      *  This method invokes a swingworker to update the currency values every 30 seconds.
      */
@@ -313,28 +320,21 @@ public class CurrencyConverter extends javax.swing.JFrame {
             }
             @Override
             protected void done() { // Convert the values automatically
-                if(!currencyAmount.getText().equals("")) {
+                if(checkAmountValueInput() && !currencyAmount.getText().equals("")) {
                     convert(selectedCurrencyOne.getSelectedItem().toString().toLowerCase(), selectedCurrencyTwo.getSelectedItem().toString().toLowerCase(), Double.parseDouble(currencyAmount.getText()));
                 }
             }
         };
-        worker.execute ();
+        worker.execute();
     }
     /** 
      *  Disables the swap and convert button on incorrect input, and changes the text to red. Enables again on correct input.
      */
     private void onCurrencyAmountTextChanged() {
         checkForResetConditionsMet();
-        String amountText = currencyAmount.getText();  // Get the amount text
+        startUpdateTimer();
         // Check if the text is empty or not a valid double
-        boolean isValid = !amountText.isEmpty(); // Create a boolean to track the state of the text
-        if (isValid) {
-            try {
-                Double.parseDouble(amountText); // Try to parse the value as a double
-            } catch (NumberFormatException e) { // If an exception occurs, we know there is bad input
-                isValid = false;    // Set the bool to false
-            }
-        }
+        boolean isValid = checkAmountValueInput();
         // Enable or disable the convertButton and swapButton based on the validation result
         if(!isValid) 
             currencyAmount.setForeground(Color.red); // Set the text to red on an error
@@ -343,8 +343,25 @@ public class CurrencyConverter extends javax.swing.JFrame {
         convertButton.setEnabled(isValid); // Update the button's states
         swapButton.setEnabled(isValid);
     }
-    /** Performs the currency conversion and displays the result to the user
-     * 
+    
+    /**
+     * This method determines if the currency amount is a valid input.
+     * @return The state of the input as a boolean.
+     */
+    private Boolean checkAmountValueInput() {
+        String amountText = currencyAmount.getText();  // Get the amount text
+        boolean isValid = !amountText.isEmpty(); // Create a boolean to track the state of the text
+        if (isValid) {
+            try {
+                Double.parseDouble(amountText); // Try to parse the value as a double
+            } catch (NumberFormatException e) { // If an exception occurs, we know there is bad input
+                isValid = false;    // Set the bool to false
+            }
+        }
+        return isValid;
+    }
+    /** 
+     * Performs the currency conversion and displays the result to the user
      * @param fromCurrency The currency to convert from
      * @param toCurrency The currency to convert to
      * @param amount The amount of currency to convert to
