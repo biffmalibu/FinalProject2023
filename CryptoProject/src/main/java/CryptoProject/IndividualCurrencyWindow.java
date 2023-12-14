@@ -24,6 +24,7 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame {
     public IndividualCurrencyWindow(String fromCurrency, String toCurrency, double currentRate, double historicRate, double dailyChange, double percentChange) {
         getContentPane().setBackground(new Color(153, 153, 153)); // Set the color of the frame for better viewing
         initComponents();
+        currencyFlag.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/" + toCurrency.toLowerCase() + ".png")));
         setTitle(fromCurrency + "/" + toCurrency + " Information"); // Set the title of the window
         this.fromCurrency = fromCurrency; // Initialize the fields
         this.toCurrency = toCurrency;
@@ -104,6 +105,7 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame {
         percentChangeLabel = new javax.swing.JLabel();
         dailyChangeLabel = new javax.swing.JLabel();
         historicPrice = new javax.swing.JLabel();
+        currencyFlag = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -129,21 +131,26 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(historicPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(currentRateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(dailyChangeLabel)
                         .addGap(12, 12, 12)
                         .addComponent(percentChangeLabel))
-                    .addComponent(currenciesLabel)
-                    .addComponent(historicPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(currencyFlag, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(currenciesLabel)))
                 .addContainerGap(71, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(currenciesLabel)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(currencyFlag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(currenciesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(currentRateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,6 +195,7 @@ public class IndividualCurrencyWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel currenciesLabel;
+    private javax.swing.JLabel currencyFlag;
     private javax.swing.JLabel currentRateLabel;
     private javax.swing.JLabel dailyChangeLabel;
     private javax.swing.JLabel historicPrice;

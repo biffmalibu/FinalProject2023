@@ -146,7 +146,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         usdPanel.setBackground(new java.awt.Color(153, 153, 153));
         usdPanel.setName("USD"); // NOI18N
 
-        usdImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/usa.png"))); // NOI18N
+        usdImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/usd.png"))); // NOI18N
 
         usdLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         usdLabel.setText("USD - United States Dollar");
@@ -193,7 +193,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         eurPanel.setBackground(new java.awt.Color(153, 153, 153));
         eurPanel.setName("EUR"); // NOI18N
 
-        eurImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/europe.png"))); // NOI18N
+        eurImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/eur.png"))); // NOI18N
 
         eurLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         eurLabel.setText("EUR - Euro");
@@ -239,7 +239,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         jpyPanel.setBackground(new java.awt.Color(153, 153, 153));
         jpyPanel.setName("JPY"); // NOI18N
 
-        jpyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/japan.png"))); // NOI18N
+        jpyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/jpy.png"))); // NOI18N
 
         jpyLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jpyLabel.setText("JPY - Japanese Yen");
@@ -286,7 +286,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         gbpPanel.setBackground(new java.awt.Color(153, 153, 153));
         gbpPanel.setName("GBP"); // NOI18N
 
-        gbpImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/united-kingdom.png"))); // NOI18N
+        gbpImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/gbp.png"))); // NOI18N
 
         gbpLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         gbpLabel.setText("GBP - Great British Pound");
@@ -333,7 +333,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         audPanel.setBackground(new java.awt.Color(153, 153, 153));
         audPanel.setName("AUD"); // NOI18N
 
-        audImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/australia.png"))); // NOI18N
+        audImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/aud.png"))); // NOI18N
 
         audLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         audLabel.setText("AUD - Austrailian Dollar");
@@ -380,7 +380,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         cadPanel.setBackground(new java.awt.Color(153, 153, 153));
         cadPanel.setName("CAD"); // NOI18N
 
-        cadImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/canada.png"))); // NOI18N
+        cadImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cad.png"))); // NOI18N
 
         cadLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cadLabel.setText("CAD - Canadian Dollars");
@@ -427,7 +427,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         chfPanel.setBackground(new java.awt.Color(153, 153, 153));
         chfPanel.setName("CHF"); // NOI18N
 
-        chfImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/switzerland.png"))); // NOI18N
+        chfImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/chf.png"))); // NOI18N
 
         chfLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         chfLabel.setText("CHF - Swiss Francs");
@@ -474,7 +474,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         cnyPanel.setBackground(new java.awt.Color(153, 153, 153));
         cnyPanel.setName("CNY"); // NOI18N
 
-        cnyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/china.png"))); // NOI18N
+        cnyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/cny.png"))); // NOI18N
 
         cnyLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         cnyLabel.setText("CNY - Chinese Yuan");
@@ -521,7 +521,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         nokPanel.setBackground(new java.awt.Color(153, 153, 153));
         nokPanel.setName("NOK"); // NOI18N
 
-        nokImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/norway.png"))); // NOI18N
+        nokImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/nok.png"))); // NOI18N
 
         nokLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         nokLabel.setText("NOK - Norwegian Krone");
@@ -568,7 +568,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         mxnPanel.setBackground(new java.awt.Color(153, 153, 153));
         mxnPanel.setName("MXN"); // NOI18N
 
-        mxnImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mexico.png"))); // NOI18N
+        mxnImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mxn.png"))); // NOI18N
 
         mxnLabel.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         mxnLabel.setText("MXN - Mexican Peso");

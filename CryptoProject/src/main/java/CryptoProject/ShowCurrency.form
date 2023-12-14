@@ -223,7 +223,7 @@
                 <Component class="javax.swing.JLabel" name="usdImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/usa.png"/>
+                      <Image iconType="3" name="/Images/usd.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -302,7 +302,7 @@
                 <Component class="javax.swing.JLabel" name="eurImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/europe.png"/>
+                      <Image iconType="3" name="/Images/eur.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -383,7 +383,7 @@
                 <Component class="javax.swing.JLabel" name="jpyImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/japan.png"/>
+                      <Image iconType="3" name="/Images/jpy.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -464,7 +464,7 @@
                 <Component class="javax.swing.JLabel" name="gbpImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/united-kingdom.png"/>
+                      <Image iconType="3" name="/Images/gbp.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -545,7 +545,7 @@
                 <Component class="javax.swing.JLabel" name="audImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/australia.png"/>
+                      <Image iconType="3" name="/Images/aud.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -626,7 +626,7 @@
                 <Component class="javax.swing.JLabel" name="cadImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/canada.png"/>
+                      <Image iconType="3" name="/Images/cad.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -707,7 +707,7 @@
                 <Component class="javax.swing.JLabel" name="chfImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/switzerland.png"/>
+                      <Image iconType="3" name="/Images/chf.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -788,7 +788,7 @@
                 <Component class="javax.swing.JLabel" name="cnyImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/china.png"/>
+                      <Image iconType="3" name="/Images/cny.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -869,7 +869,7 @@
                 <Component class="javax.swing.JLabel" name="nokImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/norway.png"/>
+                      <Image iconType="3" name="/Images/nok.png"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -950,7 +950,7 @@
                 <Component class="javax.swing.JLabel" name="mxnImage">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/Images/mexico.png"/>
+                      <Image iconType="3" name="/Images/mxn.png"/>
                     </Property>
                   </Properties>
                 </Component>
