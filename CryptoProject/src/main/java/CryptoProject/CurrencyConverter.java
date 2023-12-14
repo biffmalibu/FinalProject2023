@@ -367,8 +367,8 @@ public class CurrencyConverter extends javax.swing.JFrame {
      * @param amount The amount of currency to convert to
      */
     private void convert(String fromCurrency, String toCurrency, double amount) {
-        DecimalFormat CryptoResultFormat = new DecimalFormat("0.########"); // CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
-        DecimalFormat CurrencyResultFormat = new DecimalFormat("0.###");
+        DecimalFormat CryptoResultFormat = new DecimalFormat("#,##0.########"); // CODE FROM: https://stackoverflow.com/questions/26706784/how-to-make-0-display-as-0-00-using-decimal-format
+        DecimalFormat CurrencyResultFormat = new DecimalFormat("#,##0.###");
         String value = ""; // String to store the converted value
         if(fromCurrency.length() == 3 && toCurrency.length() == 3) {  // Convert Currency -> Currency
             value = String.valueOf( CurrencyResultFormat.format(amount/data.getPrice("bitcoin", fromCurrency.toLowerCase()) * data.getPrice("bitcoin", toCurrency.toLowerCase())));
@@ -386,7 +386,7 @@ public class CurrencyConverter extends javax.swing.JFrame {
             value = String.valueOf(CryptoResultFormat.format(data.getPrice(fromCurrency.toLowerCase(), "usd")/data.getPrice(toCurrency.toLowerCase(), "usd") * amount));
             currencyResult.setText(amount + " " + fromCurrency.substring(0, 1).toUpperCase() + fromCurrency.substring(1) + " = " + value + " " + toCurrency.substring(0, 1).toUpperCase() + toCurrency.substring(1)); //CODE FROM: https://www.javatpoint.com/how-to-capitalize-the-first-letter-of-a-string-in-java
         }
-        clipboardValue = value; // Set the clipboardValue to the current conversion
+        clipboardValue = value.replaceAll(",", ""); // Set the clipboardValue to the current conversion
         copyButton.setEnabled(true); // Enable the copy button
     }  
     /*
