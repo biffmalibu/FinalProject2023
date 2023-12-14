@@ -84,8 +84,9 @@
                   </Group>
                   <Component id="labelsLabel" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <Component id="valuesScrollPane" pref="292" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="valuesScrollPane" min="-2" pref="291" max="-2" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -179,10 +180,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="USD" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="usdPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -262,10 +261,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="EUR" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="eurPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -277,7 +274,7 @@
                           <Component id="eurLabel" min="-2" pref="242" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="eurChangeValue" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace pref="79" max="32767" attributes="0"/>
+                          <EmptySpace pref="82" max="32767" attributes="0"/>
                           <Component id="eurChangePercent" min="-2" pref="63" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="eurPrice" min="-2" pref="115" max="-2" attributes="0"/>
@@ -343,10 +340,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="JPY" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jpyPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -426,10 +421,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="GBP" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="gbpPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -509,10 +502,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="AUD" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="audPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -592,10 +583,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="CAD" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cadPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -675,10 +664,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="CHF" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="chfPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -758,10 +745,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="CNY" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cnyPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -841,10 +826,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="NOK" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="nokPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -924,10 +907,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="MXN" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mxnPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">

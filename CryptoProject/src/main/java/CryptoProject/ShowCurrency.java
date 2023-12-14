@@ -7,10 +7,15 @@
 package CryptoProject;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER;
 import javax.swing.SwingWorker;
 import javax.swing.Timer;
 
@@ -25,8 +30,20 @@ public class ShowCurrency extends javax.swing.JFrame {
      */
     public ShowCurrency() {
         initComponents();
+        valuesScrollPane.setHorizontalScrollBarPolicy(HORIZONTAL_SCROLLBAR_NEVER); // Removes the horizontal scrollbar - CODE FROM: https://stackoverflow.com/questions/1727840/disable-horizontal-scroll-in-jscrollpane
         data = new CurrencyData(); // Create an instance of currency data for the prices
         updateCurrencyData(selectedCurrency.getSelectedItem().toString()); // Initially populate the values
+        
+        for (Component component : valuesPanel.getComponents()) { // Creates a mouselistener for each JPanel in valuesPanel - used for creating individual windows
+            JPanel currencyPanel = (JPanel) component;
+            String currencyCode = currencyPanel.getName(); // Use the name of the JPanel as the "fromCurrency"
+            currencyPanel.addMouseListener(new MouseAdapter() { // CODE FROM: https://docs.oracle.com/javase/tutorial/uiswing/events/mouselistener.html
+                @Override
+                public void mouseClicked(MouseEvent e) {
+                    createIndividualWindow(currencyCode);
+                }
+            });
+        }
     }
 
     /**
@@ -127,11 +144,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         valuesPanel.setBackground(new java.awt.Color(102, 102, 102));
 
         usdPanel.setBackground(new java.awt.Color(153, 153, 153));
-        usdPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                usdPanelMouseClicked(evt);
-            }
-        });
+        usdPanel.setName("USD"); // NOI18N
 
         usdImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/usa.png"))); // NOI18N
 
@@ -178,11 +191,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         eurPanel.setBackground(new java.awt.Color(153, 153, 153));
-        eurPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                eurPanelMouseClicked(evt);
-            }
-        });
+        eurPanel.setName("EUR"); // NOI18N
 
         eurImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/europe.png"))); // NOI18N
 
@@ -208,7 +217,7 @@ public class ShowCurrency extends javax.swing.JFrame {
                 .addComponent(eurLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(eurChangeValue, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(eurChangePercent, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(eurPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -228,11 +237,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         jpyPanel.setBackground(new java.awt.Color(153, 153, 153));
-        jpyPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jpyPanelMouseClicked(evt);
-            }
-        });
+        jpyPanel.setName("JPY"); // NOI18N
 
         jpyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/japan.png"))); // NOI18N
 
@@ -279,11 +284,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         gbpPanel.setBackground(new java.awt.Color(153, 153, 153));
-        gbpPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                gbpPanelMouseClicked(evt);
-            }
-        });
+        gbpPanel.setName("GBP"); // NOI18N
 
         gbpImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/united-kingdom.png"))); // NOI18N
 
@@ -330,11 +331,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         audPanel.setBackground(new java.awt.Color(153, 153, 153));
-        audPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                audPanelMouseClicked(evt);
-            }
-        });
+        audPanel.setName("AUD"); // NOI18N
 
         audImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/australia.png"))); // NOI18N
 
@@ -381,11 +378,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         cadPanel.setBackground(new java.awt.Color(153, 153, 153));
-        cadPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cadPanelMouseClicked(evt);
-            }
-        });
+        cadPanel.setName("CAD"); // NOI18N
 
         cadImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/canada.png"))); // NOI18N
 
@@ -432,11 +425,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         chfPanel.setBackground(new java.awt.Color(153, 153, 153));
-        chfPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                chfPanelMouseClicked(evt);
-            }
-        });
+        chfPanel.setName("CHF"); // NOI18N
 
         chfImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/switzerland.png"))); // NOI18N
 
@@ -483,11 +472,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         cnyPanel.setBackground(new java.awt.Color(153, 153, 153));
-        cnyPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cnyPanelMouseClicked(evt);
-            }
-        });
+        cnyPanel.setName("CNY"); // NOI18N
 
         cnyImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/china.png"))); // NOI18N
 
@@ -534,11 +519,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         nokPanel.setBackground(new java.awt.Color(153, 153, 153));
-        nokPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                nokPanelMouseClicked(evt);
-            }
-        });
+        nokPanel.setName("NOK"); // NOI18N
 
         nokImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/norway.png"))); // NOI18N
 
@@ -585,11 +566,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         );
 
         mxnPanel.setBackground(new java.awt.Color(153, 153, 153));
-        mxnPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                mxnPanelMouseClicked(evt);
-            }
-        });
+        mxnPanel.setName("MXN"); // NOI18N
 
         mxnImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/mexico.png"))); // NOI18N
 
@@ -756,8 +733,9 @@ public class ShowCurrency extends javax.swing.JFrame {
                             .addComponent(updateButton))
                         .addGap(1, 1, 1))
                     .addComponent(labelsLabel, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addComponent(valuesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 292, Short.MAX_VALUE)
-                .addGap(45, 45, 45))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(valuesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -844,46 +822,6 @@ public class ShowCurrency extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_autoUpdateCBActionPerformed
-
-    private void usdPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usdPanelMouseClicked
-        createIndividualWindow("USD");
-    }//GEN-LAST:event_usdPanelMouseClicked
-
-    private void eurPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eurPanelMouseClicked
-        createIndividualWindow("EUR");
-    }//GEN-LAST:event_eurPanelMouseClicked
-
-    private void jpyPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpyPanelMouseClicked
-        createIndividualWindow("JPY");
-    }//GEN-LAST:event_jpyPanelMouseClicked
-
-    private void gbpPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_gbpPanelMouseClicked
-        createIndividualWindow("GBP");
-    }//GEN-LAST:event_gbpPanelMouseClicked
-
-    private void audPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_audPanelMouseClicked
-        createIndividualWindow("AUD");
-    }//GEN-LAST:event_audPanelMouseClicked
-
-    private void cadPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cadPanelMouseClicked
-        createIndividualWindow("CAD");
-    }//GEN-LAST:event_cadPanelMouseClicked
-
-    private void chfPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_chfPanelMouseClicked
-        createIndividualWindow("CHF");
-    }//GEN-LAST:event_chfPanelMouseClicked
-
-    private void cnyPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cnyPanelMouseClicked
-        createIndividualWindow("CNY");
-    }//GEN-LAST:event_cnyPanelMouseClicked
-
-    private void nokPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nokPanelMouseClicked
-        createIndividualWindow("NOK");
-    }//GEN-LAST:event_nokPanelMouseClicked
-
-    private void mxnPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mxnPanelMouseClicked
-        createIndividualWindow("MXN");
-    }//GEN-LAST:event_mxnPanelMouseClicked
 
     private void createIndividualWindow(String fromCurrency) {
         String toCurrency = selectedCurrency.getSelectedItem().toString();

@@ -78,9 +78,9 @@
                   <Component id="selectedCurrency" min="-2" max="-2" attributes="0"/>
                   <Component id="labelsLabel" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-              <Component id="valuesScrollPane" pref="288" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="valuesScrollPane" min="-2" pref="291" max="-2" attributes="0"/>
+              <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -166,10 +166,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="bitcoin" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="bitcoinPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -260,10 +258,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="ethereum" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ethereumPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -354,10 +350,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="litecoin" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="litecoinPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -448,10 +442,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="dogecoin" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dogecoinPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -542,10 +534,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="cardano" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="cardanoPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -636,10 +626,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="solana" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="SolanaPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -730,10 +718,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="monero" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="MoneroPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -824,10 +810,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="polkadot" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PolkadotPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -918,10 +902,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="ripple" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="RipplePanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -1012,10 +994,8 @@
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="99" red="99" type="rgb"/>
                 </Property>
+                <Property name="name" type="java.lang.String" value="binancecoin" noResource="true"/>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="BinancecoinPanelMouseClicked"/>
-              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
