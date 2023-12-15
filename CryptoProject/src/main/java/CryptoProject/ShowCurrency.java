@@ -822,7 +822,10 @@ public class ShowCurrency extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_autoUpdateCBActionPerformed
-
+    /**
+     * Creates an individual currency window
+     * @param fromCurrency The selected currency
+     */
     private void createIndividualWindow(String fromCurrency) {
         String toCurrency = selectedCurrency.getSelectedItem().toString();
         Double currentRate = data.getConversionRate(fromCurrency, toCurrency); // Calculate the current and historic rates
@@ -850,7 +853,7 @@ public class ShowCurrency extends javax.swing.JFrame {
         decimalFormat.setGroupingUsed(true); // Enable comma grouping
         dateLabel.setText("Updated: " + data.getDate());
         for (int i = 0; i < priceLabels.length; i++) {
-            Double currentRate = data.getConversionRate(currencies[i], base); // Calcukate the current and historic rates
+            Double currentRate = data.getConversionRate(currencies[i], base); // Calculate the current and historic rates
             Double historicRate = data.getHistoricRate(currencies[i], base);
             Double dailyChange = currentRate - historicRate;     // Find the difference and also convert the different to a percentage
             Double percentChange = (dailyChange/historicRate) * 100; 
